@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated paper."
+title: "Quantum Cryptanalysis of WARP-128 with Known Plaintext"
+type: software
+authors:
+  - family-names: "Dutta"
+    given-names: "Ranit"
+date-released: "2026-10-02"
+repository-code: "https://github.com/Indranil872001/warp-quantum-cryptanalysis"
+url: "https://github.com/Indranil872001/warp-quantum-cryptanalysis"

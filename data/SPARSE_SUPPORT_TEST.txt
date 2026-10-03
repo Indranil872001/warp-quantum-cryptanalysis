@@ -1,0 +1,1 @@
+PASS: full 41-round circuit preserves sparse support size 2^8=256

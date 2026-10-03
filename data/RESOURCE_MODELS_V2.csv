@@ -1,0 +1,5 @@
+construction,logical_qubits,CCX,T_count_FT_A_or_B,CCX_layer_depth,T_depth_FT_A_no_ancilla,T_depth_FT_B_depth1,peak_parallel_CCX,extra_qubits_FT_B_upper,width_FT_B_upper,weighted_NCT_depth,total_logical_gates
+WARP encryption,256,5248,36736,168,504,168,32,128,384,1435,18507
+two-pair ladder iteration,637,21750,152250,1156,3468,1156,48,192,829,9109,75544
+two-pair balanced iteration,638,21752,152264,678,2034,678,128,512,1150,5769,75544
+two-pair parallel+balanced iteration,766,21752,152264,358,1074,358,128,512,1278,3028,75800

@@ -1,0 +1,81 @@
+=== VERIFICATION ===
+PASS: gate-level 41-round encryption matches both official pairs
+PASS: exact sparse gate-oracle Grover recovery for one and two pairs
+PASS: finite-shot threshold crossing occurs first at k=3
+PASS: component-noise experiment generated valid probabilities
+
+=== PHASE 6 OUTPUT ===
+GATE-LEVEL GROVER:
+[
+  {
+    "unknown_bits": 8,
+    "pairs": 1,
+    "N": 256,
+    "M": 1,
+    "marked": [
+      16
+    ],
+    "true_candidate": 16,
+    "optimal_iterations": 12,
+    "success_numeric": 0.9999470421032738,
+    "success_theory": 0.9999470421032736,
+    "shots": 1024,
+    "marked_counts": {
+      "16": 1024
+    }
+  },
+  {
+    "unknown_bits": 8,
+    "pairs": 2,
+    "N": 256,
+    "M": 1,
+    "marked": [
+      16
+    ],
+    "true_candidate": 16,
+    "optimal_iterations": 12,
+    "success_numeric": 0.9999470421032738,
+    "success_theory": 0.9999470421032736,
+    "shots": 1024,
+    "marked_counts": {
+      "16": 1024
+    }
+  }
+]
+
+FINITE SHOT:
+{'iterations': 0, 'success_probability': 0.003906249999999999, 'expected_count': 3.999999999999999, 'count_sd': 1.9960899278339137, 'approx95_low': 0.08766374144552813, 'approx95_high': 7.91233625855447, 'prob_count_ge_100': 3.238736161765039e-102}
+{'iterations': 1, 'success_probability': 0.034790992736816406, 'expected_count': 35.6259765625, 'count_sd': 5.86400148965466, 'approx95_low': 24.132533642776867, 'approx95_high': 47.11941948222314, 'prob_count_ge_100': 9.967619014411282e-20}
+{'iterations': 2, 'success_probability': 0.0946377220097929, 'expected_count': 96.90902733802793, 'count_sd': 9.366844599360673, 'approx95_low': 78.550011923281, 'approx95_high': 115.26804275277485, 'prob_count_ge_100': 0.38595228413893373}
+{'iterations': 3, 'success_probability': 0.17972062825725743, 'expected_count': 184.0339233354316, 'count_sd': 12.286546748901413, 'approx95_low': 159.95229170758483, 'approx95_high': 208.11555496327838, 'prob_count_ge_100': 0.9999999999999325}
+{'iterations': 4, 'success_probability': 0.28474280203265145, 'expected_count': 291.5766292814351, 'count_sd': 14.441339371838183, 'approx95_low': 263.27160411263225, 'approx95_high': 319.88165445023793, 'prob_count_ge_100': 1.0}
+{'iterations': 5, 'success_probability': 0.40316599765415717, 'expected_count': 412.84198159785694, 'count_sd': 15.69707400165514, 'approx95_low': 382.0757165546129, 'approx95_high': 443.608246641101, 'prob_count_ge_100': 1.0}
+{'iterations': 6, 'success_probability': 0.5276176773084243, 'expected_count': 540.2805015638265, 'count_sd': 15.97557379982609, 'approx95_low': 508.9683769161674, 'approx95_high': 571.5926262114857, 'prob_count_ge_100': 1.0}
+{'iterations': 7, 'success_probability': 0.650349994727914, 'expected_count': 665.9583946013839, 'count_sd': 15.259500522080131, 'approx95_low': 636.0497735781069, 'approx95_high': 695.867015624661, 'prob_count_ge_100': 1.0}
+{'iterations': 8, 'success_probability': 0.7637221440185906, 'expected_count': 782.0514754750368, 'count_sd': 13.593433925698815, 'approx95_low': 755.4083449806672, 'approx95_high': 808.6946059694064, 'prob_count_ge_100': 1.0}
+{'iterations': 9, 'success_probability': 0.8606760445971724, 'expected_count': 881.3322696675045, 'count_sd': 11.081096418415834, 'approx95_low': 859.6133206874094, 'approx95_high': 903.0512186475996, 'prob_count_ge_100': 1.0}
+{'iterations': 10, 'success_probability': 0.9351757480633812, 'expected_count': 957.6199660169024, 'count_sd': 7.878895730787151, 'approx95_low': 942.1773303845596, 'approx95_high': 973.0626016492452, 'prob_count_ge_100': 1.0}
+{'iterations': 11, 'success_probability': 0.982583211354746, 'expected_count': 1006.1652084272599, 'count_sd': 4.186187618512279, 'approx95_low': 997.9602806949758, 'approx95_high': 1014.370136159544, 'prob_count_ge_100': 1.0}
+{'iterations': 12, 'success_probability': 0.9999470421032736, 'expected_count': 1023.9457711137521, 'count_sd': 0.23286479854222797, 'approx95_low': 1023.4893561086094, 'approx95_high': 1024, 'prob_count_ge_100': 1.0}
+
+COMPONENT NOISE:
+{'scenario': 'ideal', 'component': 'Sb0', 'p1': 0.0, 'p2': 0.0, 'p3': 0.0, 'trials': 16000, 'success': 1.0, 'ci95_low': 0.999759957634172, 'ci95_high': 1.0}
+{'scenario': 'ideal', 'component': 'S-XOR', 'p1': 0.0, 'p2': 0.0, 'p3': 0.0, 'trials': 7680, 'success': 1.0, 'ci95_low': 0.9995000417499496, 'ci95_high': 1.0}
+{'scenario': 'ideal', 'component': 'KeyAdd', 'p1': 0.0, 'p2': 0.0, 'p3': 0.0, 'trials': 20000, 'success': 1.0, 'ci95_low': 0.9998079568876411, 'ci95_high': 1.0}
+{'scenario': 'ideal', 'component': 'Round1', 'p1': 0.0, 'p2': 0.0, 'p3': 0.0, 'trials': 3000, 'success': 1.0, 'ci95_low': 0.9987211043351955, 'ci95_high': 1.0000000000000002}
+{'scenario': 'low', 'component': 'Sb0', 'p1': 0.0001, 'p2': 0.0001, 'p3': 0.0002, 'trials': 16000, 'success': 0.998625, 'ci95_low': 0.9979188530899312, 'ci95_high': 0.9990917646607467}
+{'scenario': 'low', 'component': 'S-XOR', 'p1': 0.0001, 'p2': 0.0001, 'p3': 0.0002, 'trials': 7680, 'success': 0.997265625, 'ci95_low': 0.9958232193308664, 'ci95_high': 0.9982108065657632}
+{'scenario': 'low', 'component': 'KeyAdd', 'p1': 0.0001, 'p2': 0.0001, 'p3': 0.0002, 'trials': 20000, 'success': 0.99945, 'ci95_low': 0.999015313518551, 'ci95_high': 0.9996928546165137}
+{'scenario': 'low', 'component': 'Round1', 'p1': 0.0001, 'p2': 0.0001, 'p3': 0.0002, 'trials': 3000, 'success': 0.954, 'ci95_low': 0.9459053827422866, 'ci95_high': 0.9609333799940708}
+{'scenario': 'medium', 'component': 'Sb0', 'p1': 0.0005, 'p2': 0.0005, 'p3': 0.001, 'trials': 16000, 'success': 0.9940625, 'ci95_low': 0.9927477209258914, 'ci95_high': 0.9951400872113748}
+{'scenario': 'medium', 'component': 'S-XOR', 'p1': 0.0005, 'p2': 0.0005, 'p3': 0.001, 'trials': 7680, 'success': 0.9859375, 'ci95_low': 0.9830505360027989, 'ci95_high': 0.9883385670729333}
+{'scenario': 'medium', 'component': 'KeyAdd', 'p1': 0.0005, 'p2': 0.0005, 'p3': 0.001, 'trials': 20000, 'success': 0.9983, 'ci95_low': 0.997625447563954, 'ci95_high': 0.9987831622702691}
+{'scenario': 'medium', 'component': 'Round1', 'p1': 0.0005, 'p2': 0.0005, 'p3': 0.001, 'trials': 3000, 'success': 0.7853333333333333, 'ci95_low': 0.7702804796407795, 'ci95_high': 0.7996563638998387}
+{'scenario': 'high', 'component': 'Sb0', 'p1': 0.001, 'p2': 0.001, 'p3': 0.002, 'trials': 16000, 'success': 0.9876875, 'ci95_low': 0.9858578818174043, 'ci95_high': 0.9892829868600262}
+{'scenario': 'high', 'component': 'S-XOR', 'p1': 0.001, 'p2': 0.001, 'p3': 0.002, 'trials': 7680, 'success': 0.971875, 'ci95_low': 0.9679348267825894, 'ci95_high': 0.9753433376189256}
+{'scenario': 'high', 'component': 'KeyAdd', 'p1': 0.001, 'p2': 0.001, 'p3': 0.002, 'trials': 20000, 'success': 0.9966, 'ci95_low': 0.9956923372716634, 'ci95_high': 0.9973169255091417}
+{'scenario': 'high', 'component': 'Round1', 'p1': 0.001, 'p2': 0.001, 'p3': 0.002, 'trials': 3000, 'success': 0.6256666666666667, 'ci95_low': 0.6081983444509124, 'ci95_high': 0.642813559772}
+{'scenario': 'very_high', 'component': 'Sb0', 'p1': 0.005, 'p2': 0.005, 'p3': 0.01, 'trials': 16000, 'success': 0.9449375, 'ci95_low': 0.941295026419061, 'ci95_high': 0.9483663658806477}
+{'scenario': 'very_high', 'component': 'S-XOR', 'p1': 0.005, 'p2': 0.005, 'p3': 0.01, 'trials': 7680, 'success': 0.8720052083333333, 'ci95_low': 0.8643468726418151, 'ci95_high': 0.8792915698789154}
+{'scenario': 'very_high', 'component': 'KeyAdd', 'p1': 0.005, 'p2': 0.005, 'p3': 0.01, 'trials': 20000, 'success': 0.9862, 'ci95_low': 0.9844872644205256, 'ci95_high': 0.9877259928570166}
+{'scenario': 'very_high', 'component': 'Round1', 'p1': 0.005, 'p2': 0.005, 'p3': 0.01, 'trials': 3000, 'success': 0.09633333333333334, 'ci95_low': 0.08628556175992984, 'ci95_high': 0.10741360000678919}

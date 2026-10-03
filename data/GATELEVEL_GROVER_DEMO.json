@@ -1,0 +1,36 @@
+[
+  {
+    "unknown_bits": 8,
+    "pairs": 1,
+    "N": 256,
+    "M": 1,
+    "marked": [
+      16
+    ],
+    "true_candidate": 16,
+    "optimal_iterations": 12,
+    "success_numeric": 0.9999470421032738,
+    "success_theory": 0.9999470421032736,
+    "shots": 1024,
+    "marked_counts": {
+      "16": 1024
+    }
+  },
+  {
+    "unknown_bits": 8,
+    "pairs": 2,
+    "N": 256,
+    "M": 1,
+    "marked": [
+      16
+    ],
+    "true_candidate": 16,
+    "optimal_iterations": 12,
+    "success_numeric": 0.9999470421032738,
+    "success_theory": 0.9999470421032736,
+    "shots": 1024,
+    "marked_counts": {
+      "16": 1024
+    }
+  }
+]

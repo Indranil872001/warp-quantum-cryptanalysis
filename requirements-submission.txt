@@ -1,0 +1,7 @@
+# Submission reproduction environment (direct dependencies)
+# Python 3.11 is used by the clean-environment CI workflow.
+qiskit==2.5.2
+qiskit-aer==0.17.2
+numpy
+scipy
+matplotlib

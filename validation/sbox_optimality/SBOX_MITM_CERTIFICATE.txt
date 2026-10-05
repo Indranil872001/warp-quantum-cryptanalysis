@@ -1,0 +1,15 @@
+gate_library_size=28
+forward_level_0=1
+forward_level_1=28
+forward_level_2=576
+forward_level_3=9886
+forward_level_4=147841
+forward_level_5=1986374
+backward_level_0=24
+backward_level_1=672
+backward_level_2=13536
+backward_level_3=222432
+backward_level_4=3090552
+path_length_le_9=NO
+known_10_gate_circuit=YES
+certified_optimal_length=10

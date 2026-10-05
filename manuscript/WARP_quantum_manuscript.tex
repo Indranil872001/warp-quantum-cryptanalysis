@@ -397,8 +397,7 @@ $C_2$ & \texttt{923C64F92827EE62B9667DD2548FB12C}\\
 For a known pair $(P_1,C_1)$, define
 \begin{equation}
     f_1(K)=[E_K(P_1)=C_1].
-\end{equation}
-The phase oracle is implemented as
+\end{equation}The phase oracle is implemented as
 \begin{equation}
 U_E\;\rightarrow\;\textsf{Normalize}(C_1)\;\rightarrow\;\mathrm{MCZ}_{128}\;\rightarrow\;\textsf{Denormalize}\;\rightarrow\;U_E^{-1}.
 \end{equation}
@@ -797,8 +796,7 @@ The restricted-key experiment admits an exact sparse simulation because the WARP
     \qquad |A|=2^u.
 \end{equation}
 Since $U$ permutes computational-basis states, there exists a bijection $\pi_U$ such that
-\begin{equation}
-    U\ket{\psi}=\sum_{a\in A}\alpha_a\ket{\pi_U(a)}.
+\begin{equation}    U\ket{\psi}=\sum_{a\in A}\alpha_a\ket{\pi_U(a)}.
 \end{equation}
 Therefore the support cardinality is preserved exactly:
 \begin{equation}
@@ -997,3 +995,404 @@ For a general $M$-solution search, Eq.~\eqref{eq:aggregate_marked_probability} g
 This distinction matters whenever a single known pair marks several keys: a threshold on aggregate marked counts is not the same as a threshold on the historically used key.
 
 Finite-shot detectability is also different from total cryptanalytic cost.  We therefore normalize all early-stopping comparisons by the restart law in Eq.~\eqref{eq:restart_factor} and the query-equivalent cost in Eq.~\eqref{eq:fixed_success_cost}.  For the ideal $N=256$, $M=1$, $\eta=0.99$ experiment, the standard $j=12$ point remains optimal; stopping earlier makes an individual execution shallower but increases the aggregate fixed-confidence work.
+
+\section{Noise-Sensitivity Analysis}
+
+\subsection{Component-wise logical Pauli model}
+The full-WARP component experiments below use a fully specified stochastic Pauli model, while Section~\ref{subsec:toywarp_noise} reports the separately executed end-to-end Qiskit/Aer experiment on Toy-WARP-8. We keep these two layers distinct because the former diagnoses logical component sensitivity and the latter is an actual compiled reduced-cipher Grover execution. After each X, CNOT, or CCX gate, a depolarizing Pauli event is applied with probabilities $p_1$, $p_2$, and $p_3$, respectively. Conditional on an event, a uniformly random non-identity Pauli string is applied to the gate's touched qubits. These experiments measure logical truth-table sensitivity and are not tied to a particular physical processor.
+
+We analyze the in-place $S_{b0}$, the clean S-XOR primitive, a four-bit quantum key addition, and one complete 256-qubit WARP round on random computational-basis inputs. Table~\ref{tab:component_noise} reports representative results with 95\% Wilson intervals computed in the experimental scripts.
+
+\begin{table}[t]
+\centering
+\caption{Representative component-wise correctness probabilities under the logical stochastic-Pauli model. ``Low'' uses $(p_1,p_2,p_3)=(10^{-4},10^{-4},2\cdot10^{-4})$; ``high'' uses $(10^{-3},10^{-3},2\cdot10^{-3})$; ``very high'' uses $(5\cdot10^{-3},5\cdot10^{-3},10^{-2})$.}
+\label{tab:component_noise}
+\begin{tabular}{lrrr}
+\toprule
+Component & Low & High & Very high\\
+\midrule
+$S_{b0}$ & 0.998625 & 0.987688 & 0.944938\\
+S-XOR & 0.997266 & 0.971875 & 0.872005\\
+Key addition & 0.999450 & 0.996600 & 0.986200\\
+Complete round & 0.954000 & 0.625667 & 0.096333\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The trend is expected: individual modules remain relatively robust at small logical error rates, while hundreds of gates in a complete round accumulate errors rapidly.
+
+\subsection{Effective noisy Grover proxy}
+To study amplitude-amplification sensitivity separately from full-oracle gate noise, we also use an effective local-Pauli proxy on the executable $u=8$ key register. After each oracle stage and diffuser stage, each key qubit independently experiences a single-qubit depolarizing event with probability $p_{\mathrm{stage}}$. The marked set is still determined by the full 41-round WARP predicate.
+
+At $p_{\mathrm{stage}}=0.005$, for example, the mean per-run success probabilities for $j=8,10,12$ are approximately 0.4605, 0.5309, and 0.4961, respectively; noise shifts the best single-run point below the ideal $j=12$. At $p_{\mathrm{stage}}=0.01$, the tested points $j=6,8,10,12$ give approximately 0.2468, 0.2818, 0.2741, and 0.2313.
+
+Let $\widetilde p_j$ denote the noisy success probability and define
+\begin{equation}
+    \widetilde R_{\eta}(j)=
+    \left\lceil
+    \frac{\log(1-\eta)}{\log(1-\widetilde p_j)}
+    \right\rceil .
+\end{equation}
+Between two stopping choices $j_1<j_2$ with the same per-iteration cost and negligible fixed overhead, the shorter run is genuinely cheaper at confidence $\eta$ only when
+\begin{equation}
+    j_1\widetilde R_{\eta}(j_1)
+    <
+    j_2\widetilde R_{\eta}(j_2).
+    \label{eq:noisy_stopping_criterion}
+\end{equation}
+When $\widetilde p_j$ is small, $\widetilde R_{\eta}(j)\approx\log(1/(1-\eta))/\widetilde p_j$, so the local objective is approximately to minimize $j/\widetilde p_j$, not $j$ alone.
+
+Again, fixed-success cost is the relevant metric. For an overall target of 99\%, the best tested total iteration counts are shown in Table~\ref{tab:noisy_fixed}.
+
+\begin{table}[t]
+\centering
+\caption{Effective local-Pauli Grover proxy: best tested iteration count under a 99\% fixed-success repetition metric.}
+\label{tab:noisy_fixed}
+\begin{tabular}{rrrr}
+\toprule
+$p_{\mathrm{stage}}$ & $j$ per run & Mean success/run & Total iterations for 99\%\\
+\midrule
+0 & 12 & 0.99995 & 12\\
+$10^{-5}$ & 12 & 0.99911 & 12\\
+$10^{-4}$ & 10 & 0.92984 & 20\\
+$5\cdot10^{-4}$ & 12 & 0.93257 & 24\\
+$10^{-3}$ & 10 & 0.82420 & 30\\
+$5\cdot10^{-3}$ & 8 & 0.46046 & 64\\
+$10^{-2}$ & 6 & 0.24681 & 102\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Full-oracle no-fault sanity proxy}
+Finally, we use the exact Phase-3 gate counts to illustrate why uncorrected full-oracle execution should not be described as NISQ-feasible. Mapping each CCX to a transparent exact-Toffoli decomposition with nine one-qubit Clifford/$T$ gates and six CNOTs, one two-pair wide Grover iteration contains approximately 207,560 one-qubit and 172,484 two-qubit primitive gates. Under illustrative independent error rates $p_1=10^{-5}$ and $p_2=10^{-4}$, the probability that none of these primitive locations experiences an error is
+\begin{equation}
+    (1-p_1)^{207560}(1-p_2)^{172484}\approx4.05\times10^{-9}.
+\end{equation}
+This quantity is \emph{not} the Grover success probability and should not be interpreted as a hardware forecast. It is only a sanity proxy showing that direct uncorrected execution of the complete oracle is not a credible near-term claim.
+
+\section{Comparison with Existing Quantum-Cipher Studies}
+
+Table~\ref{tab:related_comparison} positions the present work relative to representative quantum block-cipher studies. Resource conventions differ substantially across the literature, so the table reports each work's own principal implementation landmark rather than treating unlike gate libraries as directly comparable.
+
+\begin{table}[H]
+\centering
+\caption{Representative quantum-cipher studies and their resource-analysis emphasis. Numerical landmarks follow each cited work's own cost convention and are therefore not direct cross-paper benchmarks.}
+\label{tab:related_comparison}
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\textwidth}{@{}L{2.25cm}L{1.95cm}L{3.05cm}X@{}}
+\toprule
+Work & Target & Reported landmark & Main scope\\
+\midrule
+Grassl et al.~\cite{Grassl2016} & AES & Clifford+$T$ estimates & Full Grover key-search resource estimation\\
+Jaques et al.~\cite{Jaques2020} & AES, LowMC & Complete oracles & Width--depth optimization and depth-constrained search\\
+Jang et al.~\cite{JangDefault2025} & DEFAULT & Alternative circuit tradeoffs & Reversible implementation and Grover security analysis\\
+Akhlaq et al.~\cite{Akhlaq2024} & PRINCE, Midori & Lightweight-cipher resources & Quantum implementation and Grover resource estimation\\
+Cildiroglu--Yayla~\cite{SLIM2025} & SLIM & 112-Q encryption & Feistel implementation and multi-pair Grover analysis\\
+Cildiroglu et al.~\cite{MIBS2026} & MIBS & 128/144-Q encryption & Feistel implementation, multi-pair Grover, MAXDEPTH analysis\\
+Mukherjee et al.~\cite{KLEIN2026} & KLEIN family & Verified lightweight circuits & Full-cipher quantum implementation and Grover resources\\
+Wang et al.~\cite{Wang2025} & S-AES & Reduced-resource Grover & Executable S-AES attack and circuit/resource optimization\\
+Kiran et al.~\cite{Kiran2026} & Mini-AES & Executable Grover & Known-plaintext recovery, module noise, finite-shot analysis\\
+Song--Seo~\cite{SongSeo2026} & Rijndael & Verified ProjectQ oracles & Parametric Rijndael resources under MAXDEPTH\\
+Ulgen et al.~\cite{Ulgen2026} & GFSPX & 209 Q; cost 32,498; depth 7,617 & Hybrid GFN implementation and three-pair parallel Grover oracle\\
+This work & WARP-128 + validation ciphers & 256-Q full encryption; 766-Q depth-oriented iteration & Verified 41-round WARP, exact multi-pair identifiability, success-normalized cost, sparse full-WARP experiments, and end-to-end toy execution\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Several comparisons are particularly informative. KATAN~\cite{Rahman2022} shows that conclusions can change materially under different exact Toffoli/AND decompositions, motivating our FT-A/FT-B reporting rather than a single $7T$ count. SLIM, MIBS, and GFSPX~\cite{SLIM2025,MIBS2026,Ulgen2026} show that multi-pair key checking, width--depth tradeoffs, and explicit depth constraints have become standard concerns for Feistel-like lightweight ciphers. Song and Seo's Rijndael study~\cite{SongSeo2026} further illustrates the value of verified implementations under a clearly stated depth model. The present WARP study differs by targeting a 128-bit-block, 128-bit-key Type-2 GFN, by deriving the collision requirement from the equality of block and key sizes, and by preserving the complete 41-round WARP predicate in its sparse executable experiments.
+
+The closest methodological comparisons to the executable part are the S-AES and Mini-AES studies~\cite{Wang2025,Kiran2026}.  Their $2^{16}$ key spaces make complete Grover demonstrations possible, whereas WARP retains a full 128-bit key and block.  The present study adds three controls that become essential at full scale.  First, key multiplicity is interpreted through the exact ideal-permutation law in Section~\ref{subsec:identifiability} rather than inferred to be structural from a single pair.  Second, unique-key recovery is defined explicitly by multi-pair conjunction and independently validated on Mini-AES and S-AES in Section~\ref{subsec:cross_cipher_validation}.  Third, iteration reductions are compared at a common overall success probability using Eqs.~\eqref{eq:restart_factor}--\eqref{eq:fixed_success_resource}, so per-run depth reduction is not conflated with aggregate cryptanalytic work.  We also separate two executable roles: the restricted-key experiment preserves the complete 41-round WARP encryption function and is validated through the exact sparse-support property~\eqref{eq:sparse_support}, while Toy-WARP-8 supplies a literal full-key-space Qiskit/Aer recovery and end-to-end noise experiment without being used to make a reduced-round WARP-128 security claim.
+
+\section{Discussion}
+The experiments intentionally separate three levels of claim.  First, all full-WARP resource numbers come from the verified 41-round reversible circuit.  Second, the exact sparse experiments execute the same full 41-round predicate while restricting only the unknown-key subspace.  Third, Toy-WARP-8 changes the cipher size deliberately so that the entire key register, oracle, diffuser, measurement process, and depolarizing noise can be executed end to end in Qiskit/Aer.  Results from the third level validate the implementation methodology and noise trends; they are not substituted for the first level's WARP-128 security estimates.
+Equation~\eqref{eq:total_t} should be interpreted as a logical pre-fault-tolerance baseline. A complete physical attack would additionally require compilation to a hardware-native gate set, connectivity-aware routing, error correction, magic-state production, and a concrete architecture/time model. These costs can dominate logical gate counts. Therefore, the present results are most useful for comparing reversible design choices and for establishing a reproducible oracle baseline.
+The combined analysis separates three notions that are sometimes reported under the single word ``cost.''  First, \emph{single-run depth} decreases whenever a run is stopped earlier.  Second, \emph{aggregate fixed-confidence work} also includes the restart factor required to reach a common recovery probability and can therefore increase when the run is shortened.  Third, \emph{parallel wall-clock time} may be reduced by running independent repetitions or disjoint searches concurrently, but only by spending additional logical width and hardware.  Equations~\eqref{eq:restart_factor}--\eqref{eq:fixed_success_resource} make the first two quantities explicit; any claim about the third requires a separate architecture and parallelization model.
+The oracle family exposes three distinct optimization objectives. The compact recomputation construction minimizes logical width at 383 qubits but raises the per-iteration $T$-count to 227,486. The original wide ladder construction keeps the $T$-count at 152,250 with 637 qubits, but its serial equality test produces Toffoli-layer depth 1,156. Replacing the ladder by a balanced tree changes the $T$-count by only 14 $T$ gates and lowers that depth to 678. Finally, a coherent 128-qubit key-copy register allows the two WARP encryptions to be scheduled in parallel, producing Toffoli-layer depth 358 at 766 logical qubits. Thus ``best'' depends on whether width, non-Clifford count, or non-Clifford depth is the binding architectural resource, consistent with the broader lesson of depth-aware Grover-oracle studies~\cite{Jaques2020,Rahman2022}.
+The use of two independent plaintext/ciphertext pairs is not an implementation detail: it changes the search problem from recovering an arbitrary key consistent with one observed mapping to identifying the master key with overwhelming probability under the ideal-cipher model.  Equation~\eqref{eq:unique_key_probability} quantifies this directly rather than only through an expected survivor count.  The exhaustive Mini-AES and S-AES experiments in Section~\ref{subsec:cross_cipher_validation}, together with the Toy-WARP-8 collision example, provide small-domain checks of the same phenomenon.  We therefore avoid interpreting a single-pair collision as a structural weakness unless a statistically meaningful deviation from an appropriate random-permutation baseline is demonstrated.
+The present full-round analysis is generic Grover key search. WARP nevertheless has unusually rich reduced-round classical structure: 32-round integral key recovery based on monomial prediction~\cite{Hadipour2022}, 23-round differential key recovery~\cite{Teh2022}, a 27-round rectangle attack~\cite{Zeng2025}, and an 18-round low-data known-plaintext meet-in-the-middle attack~\cite{Vaziri2026}. A dedicated quantum attack could try to accelerate one of the resulting subkey-search stages rather than search the entire 128-bit master-key space, in the spirit of dedicated quantum attacks on SIMON~\cite{LiuYang2020}. However, parity and integral aggregation do not automatically receive a Grover square-root speedup, so such an extension requires a separate oracle and query-complexity derivation.
+The recent Type-1/2 GFS related-key attack of Sun et al.~\cite{Sun2026} creates a second research direction: determine rigorously whether WARP's concrete alternating-half key schedule and round function satisfy the independent-subkey/related-key assumptions needed by that generic Simon construction, or whether the real key schedule obstructs the period. Either result would concern a stronger oracle model than the present known-plaintext setting and is therefore kept separate from the full-round Grover baseline.
+
+\section{Limitations}
+\label{sec:limitations}
+
+The present work has several explicit limitations.
+\begin{itemize}
+    \item The complete 381--766-qubit Grover oracles are not simulated as dense statevectors; such simulation is classically infeasible. Full-scale results are exact logical circuit counts derived from verified reversible gate lists.
+    \item Executable Grover demonstrations restrict the unknown-key subspace. They preserve the complete 41-round WARP function but do not constitute an executable full 128-bit key search.
+    \item The full-WARP stochastic Pauli experiments are logical sensitivity models, not hardware-calibrated predictions. The Toy-WARP-8 experiment is an actual Qiskit/Aer end-to-end simulation under an explicitly chosen depolarizing model, but it is still a simulator experiment rather than a calibrated real-QPU result. IBM or other cloud-hardware access is not required for the core results.
+    \item The permutation is free at the logical-wire level. A physical implementation must pay routing cost determined by the hardware topology.
+    \item The reported FT-A/FT-B $T$-depth values are decomposition-level logical estimates. They use exact seven-$T$ Toffolis with $T$-depth three or one, respectively, but do not perform global Clifford+$T$ resynthesis across neighboring Toffolis.
+    \item The exact false-key distribution and uniqueness probabilities use the ideal-cipher model, in particular independent uniformly random permutations across wrong keys.  They provide a baseline for interpreting collisions, not a proof that WARP itself is statistically ideal.
+    \item The Mini-AES/S-AES occupancy experiment uses a fixed finite panel of 16 plaintexts per cipher and a Monte Carlo random-mapping calibration.  It is an external validation of the methodology, not a global statistical characterization of either cipher.
+    \item We do not convert the logical counts into a NIST MAXDEPTH-constrained physical attack cost; doing so would require an explicit parallelization, error-correction, and architecture model beyond the scope of the present logical-circuit study.
+    \item We do not claim a practical break of WARP-128. The contribution is a concrete quantum implementation and key-search resource analysis.
+\end{itemize}
+
+\section{Reproducibility}
+
+The implementation package contains independent classical WARP code; the synthesized S-box and ANF verifier; the complete reversible round and encryption generator; one- and two-pair Grover oracles; restricted-key Grover experiments; finite-shot and fixed-confidence scripts; stochastic-Pauli experiments; the complete Toy-WARP-8 classical and reversible implementations; the Qiskit/Aer end-to-end Grover and noise scripts; independent Mini-AES and S-AES reference implementations with exhaustive collision/occupancy analysis; raw execution logs; and CSV tables used to generate the results in this paper. The principal regression checks are:
+\begin{itemize}
+    \item all 16 S-box inputs and all 256 S-XOR input pairs;
+    \item 1,000 random standalone reversible rounds;
+    \item all three official WARP test vectors and 100 random complete encryptions;
+    \item inverse-circuit restoration of both state and key registers;
+    \item clean multi-controlled-X decompositions and 128-control structured/random tests;
+    \item exact agreement between executable Grover amplitudes and Eq.~\eqref{eq:grover_success};
+    \item exact binomial finite-shot and fixed-confidence restart calculations;
+    \item exhaustive $2^{16}$-key Mini-AES and S-AES pair-intersection checks and the 16-plaintext occupancy-panel experiment reported in Section~\ref{subsec:cross_cipher_validation};
+    \item exhaustive small-instance verification of the balanced multi-controlled phase tree;
+    \item explicit preservation of all $2^8=256$ sparse candidate branches through the full 41-round reversible circuit;
+    \item exhaustive agreement of Toy-WARP-8 classical and reversible implementations on all $65{,}536$ key/plaintext evaluations;
+    \item complete Qiskit/Aer full-key recovery of $K=\mathtt{C6}$ with 4,095 correct measurements in 4,096 ideal shots;
+    \item the final 12-point replicated Aer depolarizing campaign reported in Section~\ref{subsec:toywarp_noise}, with three independent simulator seeds, 4,096 shots per seed, fixed transpilation, and the raw log/CSV/metadata retained in the artifact package.
+\end{itemize}
+The WARP core implementation is available in the public development repository at \url{https://github.com/Indranil872001/warp-quantum-cryptanalysis}. For the WARP-core source audit reported here, the repository revision inspected on 5 October 2026 was commit \texttt{bb5f0ca36076004ee5df9c32642cade5b8402492}; later repository changes should not be assumed to be part of the submitted evidence. For reproducibility, the submission package should be treated as the frozen record for the manuscript-specific Toy-WARP-8, Mini-AES/S-AES, raw simulator-output, and generated-table files.
+
+
+\section*{Data availability}
+All numerical values used in the manuscript tables are generated from the accompanying scripts and machine-readable CSV/JSON/log files. The manuscript-specific submission artifact contains the cross-cipher occupancy data and the recorded Toy-WARP-8 simulator outputs used in the reported analyses.
+
+\section*{Code availability}
+The WARP core implementation and regression code are available at
+\url{https://github.com/Indranil872001/warp-quantum-cryptanalysis}. The submission artifact records the audited repository revision and contains the additional manuscript-specific validation material. A persistent archived release should be deposited and its DOI or immutable URL inserted here before the final archival version.
+
+\section{Conclusion}
+
+We presented a verified reversible implementation and known-plaintext Grover analysis of WARP-128.  The complete 41-round encryption uses 256 logical qubits, no clean ancillary qubits, and 5,248 Toffoli gates.  Building on this circuit, we constructed one-pair and multi-pair phase oracles and quantified their width--gate--depth tradeoffs.  The gate-oriented two-pair Grover iteration uses 21,750 Toffolis and a transparent baseline $T$ count of 152,250; a full unique-key search therefore requires approximately $2^{63.65}$ iterations and $2^{80.87}$ logical $T$ gates under the stated model.  A balanced equality tree and coherent key-fanout architecture reduce the complete-iteration Toffoli-layer depth from 1,156 to 358 with essentially unchanged $T$ count, at the cost of increasing logical width to 766 qubits.
+
+The analysis also gives a more precise methodology for known-plaintext quantum key search.  Under the ideal-permutation model, a wrong key satisfies $r$ distinct pairs with probability $1/(2^b)_r$, yielding the exact binomial false-key law in Eq.~\eqref{eq:falsekey_binomial}.  For WARP's equal 128-bit key and block sizes, one pair uniquely identifies the true key with probability close to $e^{-1}$, whereas two pairs reduce the expected number of wrong survivors exactly to $2^{-128}$.  Exhaustive Mini-AES and S-AES experiments reproduce the same qualitative transition from single-pair multiplicity to two-pair uniqueness, supporting the interpretation that such collisions are a generic finite-domain effect unless a deviation from an appropriate random baseline is demonstrated.
+
+Finally, reduced Grover iteration counts are evaluated through the fixed-confidence restart factor in Eq.~\eqref{eq:restart_factor}, not by per-run depth alone.  In the ideal executable WARP experiments the first amplitude maximum remains preferable, whereas the controlled noise studies show that sufficiently noisy circuits can favor an earlier stopping point after repetition cost is included.  The exact sparse full-WARP experiments preserve the complete 41-round predicate while restricting only the unknown-key subspace, and the separate Toy-WARP-8 demonstrator supplies an actual full-key-space Qiskit/Aer recovery with replicated depolarizing-noise measurements.  Together, the verified circuit, multi-pair oracle family, exact identifiability law, success-normalized cost model, cross-cipher validation, and explicit $T$-depth tradeoffs establish a reproducible full-round WARP baseline and a general framework for comparing known-plaintext Grover attacks across symmetric ciphers.
+
+\appendix
+\section{Coordinate ANFs of the WARP/MIDORI S-box}
+Using $x=x_0+2x_1+4x_2+8x_3$ and $y=y_0+2y_1+4y_2+8y_3$, the coordinate Boolean functions used in our independent verifier are
+\begin{align}
+y_0 &= x_1 \oplus x_0x_2 \oplus x_0x_1x_2 \oplus x_0x_3 \oplus x_0x_1x_3 \oplus x_1x_2x_3,\\
+y_1 &= x_0 \oplus x_2 \oplus x_0x_2 \oplus x_0x_3 \oplus x_2x_3,\\
+y_2 &= 1 \oplus x_0 \oplus x_0x_1x_2 \oplus x_3 \oplus x_0x_3 \oplus x_0x_1x_3 \oplus x_1x_2x_3,\\
+y_3 &= 1 \oplus x_0x_1 \oplus x_1x_3 \oplus x_0x_1x_3 \oplus x_2x_3 \oplus x_1x_2x_3.
+\end{align}
+The maximum algebraic degree is three.
+
+\section{The 10-Gate In-Place S-box Circuit}
+One independently synthesized circuit is
+\begin{Verbatim}[fontsize=\small]
+1  CX(0 -> 2)
+2  CCX(0,2 -> 3)
+3  CCX(2,3 -> 0)
+4  X(3)
+5  CX(1 -> 3)
+6  CX(0 -> 2)
+7  CCX(0,3 -> 1)
+8  CCX(1,3 -> 0)
+9  CX(1 -> 3)
+10 X(0)
+\end{Verbatim}
+with the logical output relabeling $(y_0,y_1,y_2,y_3)=(q_1,q_2,q_3,q_0)$.
+
+\begin{thebibliography}{99}
+
+\bibitem{Grover1996}
+L.~K. Grover,``A fast quantum mechanical algorithm for database search,''
+\emph{Proceedings of the 28th Annual ACM Symposium on Theory of Computing}, pp.~212--219, 1996.
+DOI: 10.1145/237814.237866.
+
+\bibitem{WARP2020}
+S.~Banik, Z.~Bao, T.~Isobe, H.~Kubo, F.~Liu, K.~Minematsu, K.~Sakamoto, N.~Shibata, and M.~Shigeri,
+``WARP: Revisiting GFN for Lightweight 128-Bit Block Cipher,''
+in \emph{Selected Areas in Cryptography -- SAC 2020}, LNCS 12804, pp.~535--564, Springer, 2021.
+DOI: 10.1007/978-3-030-81652-0\_21; IACR ePrint 2020/1320.
+
+\bibitem{Grassl2016}
+M.~Grassl, B.~Langenberg, M.~Roetteler, and R.~Steinwandt,
+``Applying Grover's Algorithm to AES: Quantum Resource Estimates,''
+\emph{Post-Quantum Cryptography -- PQCrypto 2016}, pp.~29--43, Springer, 2016.
+DOI: 10.1007/978-3-319-29360-8\_3.
+
+\bibitem{Langenberg2020}
+B.~Langenberg, H.~Pham, and R.~Steinwandt,
+``Reducing the Cost of Implementing the Advanced Encryption Standard as a Quantum Circuit,''
+\emph{IEEE Transactions on Quantum Engineering}, vol.~1, pp.~1--12, 2020.
+DOI: 10.1109/TQE.2020.2965697.
+
+\bibitem{Jaques2020}
+S.~Jaques, M.~Naehrig, M.~Roetteler, and F.~Virdia,
+``Implementing Grover Oracles for Quantum Key Search on AES and LowMC,''
+\emph{Advances in Cryptology -- EUROCRYPT 2020}, LNCS 12106, pp.~280--310, Springer, 2020.
+DOI: 10.1007/978-3-030-45724-2\_10.
+
+\bibitem{Lin2023}
+D.~Lin, Z.~Xiang, R.~Xu, S.~Zhang, and X.~Zeng,
+``Optimized quantum implementation of AES,''
+\emph{Quantum Information Processing}, vol.~22, no.~9, art.~352, 2023.
+DOI: 10.1007/s11128-023-04043-9.
+
+\bibitem{Jang2021}
+K.~Jang, G.~Song, H.~Kim, H.~Kwon, H.~Kim, and H.~Seo,
+``Efficient Implementation of PRESENT and GIFT on Quantum Computers,''
+\emph{Applied Sciences}, vol.~11, no.~11, art.~4776, 2021.
+DOI: 10.3390/app11114776.
+
+\bibitem{JangDefault2025}
+K.~Jang, A.~Baksi, J.~Breier, H.~Seo, and A.~Chattopadhyay,
+``Quantum Implementation and Analysis of DEFAULT,''
+\emph{Cryptography and Communications}, vol.~17, no.~2, pp.~359--375, 2025.
+DOI: 10.1007/s12095-023-00666-y.
+
+\bibitem{Jing2023}
+X.~Jing, Y.~Li, G.~Zhao, H.~Xie, and Q.~Wang,
+``Quantum circuit implementation and resource analysis of LBlock and LiCi,''
+\emph{Quantum Information Processing}, vol.~22, art.~347, 2023.
+DOI: 10.1007/s11128-023-04105-y.
+
+\bibitem{Akhlaq2024}
+A.~H. Akhlaq, S.~N. Allu, and N.~Yerukala,
+``Quantum resource estimation of PRINCE and Midori Block Ciphers,''
+\emph{International Journal of Information Technology}, vol.~17, no.~7, pp.~3801--3810, 2025.
+DOI: 10.1007/s41870-024-01997-6.
+
+\bibitem{Dasu2019}
+V.~A. Dasu, A.~Baksi, S.~Sarkar, and A.~Chattopadhyay,
+``LIGHTER-R: Optimized Reversible Circuit Implementation For SBoxes,''
+\emph{2019 IEEE 32nd International System-on-Chip Conference (SOCC)}, pp.~260--265, 2019.
+DOI: 10.1109/SOCC46988.2019.1570548320.
+
+\bibitem{DORCIS2023}
+M.~Chun, A.~Baksi, and A.~Chattopadhyay,
+``DORCIS: Depth Optimized Quantum Implementation of Substitution Boxes,''
+\emph{IACR Cryptology ePrint Archive}, Report 2023/286, 2023.
+
+\bibitem{Chen2024}
+J.~Chen, Q.~Liu, Y.~Fan, L.~Wu, B.~Li, and M.~Wang,
+``New SAT-based Model for Quantum Circuit Decision Problem: Searching for Low-Cost Quantum Implementation,''
+\emph{IACR Communications in Cryptology}, vol.~1, no.~1, art.~31, 2024.
+DOI: 10.62056/ANMMP-4C2H.
+
+\bibitem{Moiseevskiy2023}
+A.~Moiseevskiy,
+``Quantum-enhanced symmetric cryptanalysis for S-AES,''
+\emph{arXiv:2304.05380}, 2023.
+
+\bibitem{Wang2025}
+Z.~Wang, M.~Zheng, J.~Wu, K.~Wen, S.~Wei, and G.-L.~Long,
+``Reducing quantum resources for attacking S-AES on quantum devices,''
+\emph{npj Quantum Information}, vol.~11, art.~157, 2025.
+DOI: 10.1038/s41534-025-01106-w.
+
+\bibitem{Kiran2026}
+U.~Kiran, A.~Safdar, S.~U. Khalid, H.~T. Butt, and Z.~Jalil,
+``Quantum cryptanalysis of SPN ciphers with known plaintext,''
+\emph{npj Quantum Information}, vol.~12, art.~85, 2026.
+DOI: 10.1038/s41534-026-01218-x.
+
+\bibitem{SLIM2025}
+H.~O. Cildiroglu and O.~Yayla,
+``Quantum implementation of SLIM and its Grover cryptanalysis,''
+\emph{Physica Scripta}, vol.~100, no.~10, art.~105023, 2025.
+DOI: 10.1088/1402-4896/ae1336.
+
+\bibitem{MIBS2026}
+H.~O. Cildiroglu, H.~Basmaci, and O.~Yayla,
+``Quantum Grover Attack on MIBS,''
+\emph{Open Physics}, vol.~24, no.~1, art.~20250297, 2026.
+DOI: 10.1515/phys-2025-0297.
+
+\bibitem{KLEIN2026}
+I.~Mukherjee, R.~Dutta, B.~Singh, L.~Alexandar, and B.~Mandal,
+``Quantum Circuit Implementation and Grover's Search on the Lightweight Block Cipher KLEIN Family,''
+\emph{IACR Cryptology ePrint Archive}, Report 2026/1007, 2026.
+
+\bibitem{SongSeo2026}
+G.~Song and H.~Seo,
+``Quantum Implementation and Analysis of Rijndael,''
+\emph{IACR Cryptology ePrint Archive}, Report 2026/1412, 2026.
+
+\bibitem{Dong2019}
+X.~Dong, Z.~Li, and X.~Wang,
+``Quantum cryptanalysis on some generalized Feistel schemes,''
+\emph{Science China Information Sciences}, vol.~62, art.~22501, 2019.
+DOI: 10.1007/s11432-017-9436-7.
+
+\bibitem{Hodzic2022}
+S.~Hod\v{z}i\'c, A.~Roy, and E.~Andreeva,
+``Quantum Cryptanalysis of Farfalle and (Generalised) Key-Alternating Feistel Networks,''
+\emph{IACR Cryptology ePrint Archive}, Report 2022/399, 2022.
+
+\bibitem{Sun2023}
+H.-W.~Sun, B.-B.~Cai, S.-J.~Qin, Q.-Y.~Wen, and F.~Gao,
+``Quantum Attacks on Type-1 Generalized Feistel Schemes,''
+\emph{Advanced Quantum Technologies}, vol.~6, art.~2300155, 2023.
+DOI: 10.1002/qute.202300155.
+
+\bibitem{LiuYang2020}
+H.~Liu and L.~Yang,
+``Quantum Key Recovery Attack on SIMON Block Cipher,''
+\emph{arXiv:2012.08321}, 2020.
+
+
+\bibitem{Hadipour2022}
+H.~Hadipour and M.~Eichlseder,
+``Integral Cryptanalysis of WARP based on Monomial Prediction,''
+\emph{IACR Transactions on Symmetric Cryptology}, vol.~2022, no.~2, pp.~92--112, 2022.
+DOI: 10.46586/tosc.v2022.i2.92-112.
+
+\bibitem{Teh2022}
+J.~S. Teh and A.~Biryukov,
+``Differential cryptanalysis of WARP,''
+\emph{Journal of Information Security and Applications}, vol.~70, art.~103316, 2022.
+DOI: 10.1016/j.jisa.2022.103316.
+
+\bibitem{Shi2023}
+J.~Shi, G.~Liu, and C.~Li,
+``SAT-Based Security Evaluation for WARP against Linear Cryptanalysis,''
+\emph{IET Information Security}, vol.~2023, art.~5323380, 2023.
+DOI: 10.1049/2023/5323380.
+
+\bibitem{Zeng2025}
+X.~Zeng, L.~Tan, and H.~Xu,
+``Improved Search of Boomerang Distinguishers for Generalized Feistel and Application to WARP,''
+\emph{IACR Transactions on Symmetric Cryptology}, vol.~2025, no.~1, pp.~444--470, 2025.
+DOI: 10.46586/tosc.v2025.i1.444-470.
+
+\bibitem{Vaziri2026}
+M.~Vaziri,
+``Automated Tool for Meet-in-the-Middle Attacks with Very Low Data and Memory Complexity,''
+in \emph{Lightweight Cryptography for Security and Privacy}, LNCS 16216, pp.~306--327, Springer, 2026.
+DOI: 10.1007/978-3-032-15541-2\_17.
+
+\bibitem{Rahman2022}
+M.~Rahman and G.~Paul,
+``Grover on KATAN: Quantum Resource Estimation,''
+\emph{IEEE Transactions on Quantum Engineering}, vol.~3, art.~3100809, pp.~1--9, 2022.
+DOI: 10.1109/TQE.2022.3140376.
+
+\bibitem{Sun2026}
+H.-W.~Sun, L.~Zhang, D.-D.~Li, Z.-Q.~Li, R.-X.~Xu, and K.-J.~Zhang,
+``Quantum related-key attacks on Feistel-like ciphers,''
+\emph{EPJ Quantum Technology}, vol.~13, art.~35, 2026.
+DOI: 10.1140/epjqt/s40507-026-00481-3.
+
+\bibitem{Ulgen2026}
+I.~Ulgen, H.~O.~Cildiroglu, and O.~Yayla,
+``Quantum Circuit Realization and Grover Cryptanalysis of the Hybrid ARX-SPN Cipher GFSPX,''
+\emph{Physica Scripta}, 2026.
+DOI: 10.1088/1402-4896/ae86c7; IACR ePrint 2026/949.
+
+\bibitem{Amy2013}
+M.~Amy, D.~Maslov, M.~Mosca, and M.~Roetteler,
+``A meet-in-the-middle algorithm for fast synthesis of depth-optimal quantum circuits,''
+\emph{IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems},
+vol.~32, no.~6, pp.~818--830, 2013.
+DOI: 10.1109/TCAD.2013.2244643.
+
+\bibitem{Selinger2013}
+P.~Selinger,
+``Quantum circuits of $T$-depth one,''
+\emph{Physical Review A}, vol.~87, art.~042302, 2013.
+DOI: 10.1103/PhysRevA.87.042302.
+
+\end{thebibliography}
+
+\end{document}

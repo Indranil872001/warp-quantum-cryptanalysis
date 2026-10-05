@@ -1147,15 +1147,16 @@ The implementation package contains independent classical WARP code; the synthes
     \item complete Qiskit/Aer full-key recovery of $K=\mathtt{C6}$ with 4,095 correct measurements in 4,096 ideal shots;
     \item the final 12-point replicated Aer depolarizing campaign reported in Section~\ref{subsec:toywarp_noise}, with three independent simulator seeds, 4,096 shots per seed, fixed transpilation, and the raw log/CSV/metadata retained in the artifact package.
 \end{itemize}
-The WARP core implementation is available in the public development repository at \url{https://github.com/Indranil872001/warp-quantum-cryptanalysis}. For the WARP-core source audit reported here, the repository revision inspected on 5 October 2026 was commit \texttt{bb5f0ca36076004ee5df9c32642cade5b8402492}; later repository changes should not be assumed to be part of the submitted evidence. For reproducibility, the submission package should be treated as the frozen record for the manuscript-specific Toy-WARP-8, Mini-AES/S-AES, raw simulator-output, and generated-table files.
+The complete reproducibility repository is available at \url{https://github.com/Indranil872001/warp-quantum-cryptanalysis}.  The submission snapshot used for the present manuscript is commit \texttt{7852f23337f818a7f6e9922a8324ed696c5eb78b}.  This snapshot contains the WARP core implementation, the Mini-AES/S-AES cross-cipher validation, Toy-WARP-8 execution scripts and raw/summary/metadata files, the independent WARP numerical audit, the S-box optimality certificate, and the resolved clean-environment dependency lock.  The clean-environment GitHub Actions reproducibility workflow completed successfully for this code base.
 
 
 \section*{Data availability}
-All numerical values used in the manuscript tables are generated from the accompanying scripts and machine-readable CSV/JSON/log files. The manuscript-specific submission artifact contains the cross-cipher occupancy data and the recorded Toy-WARP-8 simulator outputs used in the reported analyses.
+All numerical values used in the manuscript tables are generated from the accompanying scripts and machine-readable CSV/JSON/log files available in the public reproducibility repository.  The exact submission snapshot is commit \texttt{7852f23337f818a7f6e9922a8324ed696c5eb78b}, which contains the cross-cipher occupancy data and the recorded Toy-WARP-8 raw, summary, metadata, and execution-log files used in the reported analyses.
 
 \section*{Code availability}
-The WARP core implementation and regression code are available at
-\url{https://github.com/Indranil872001/warp-quantum-cryptanalysis}. The submission artifact records the audited repository revision and contains the additional manuscript-specific validation material. A persistent archived release should be deposited and its DOI or immutable URL inserted here before the final archival version.
+The complete implementation, validation code, audit scripts, and clean-environment reproducibility workflow are publicly available at
+\url{https://github.com/Indranil872001/warp-quantum-cryptanalysis}.  The immutable code snapshot corresponding to this submission is
+\url{https://github.com/Indranil872001/warp-quantum-cryptanalysis/tree/7852f23337f818a7f6e9922a8324ed696c5eb78b}.
 
 \section{Conclusion}
 

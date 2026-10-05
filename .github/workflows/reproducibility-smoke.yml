@@ -1,0 +1,67 @@
+name: reproducibility-smoke
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  clean-environment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install submission dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements-submission.txt
+          python -m pip freeze > environment-lock-ci.txt
+          python - <<'PY'
+          import sys, qiskit, qiskit_aer, numpy, scipy, matplotlib
+          print('Python', sys.version)
+          print('qiskit', qiskit.__version__)
+          print('qiskit-aer', qiskit_aer.__version__)
+          print('numpy', numpy.__version__)
+          print('scipy', scipy.__version__)
+          print('matplotlib', matplotlib.__version__)
+          PY
+
+      - name: WARP core verification
+        env:
+          PYTHONPATH: ${{ github.workspace }}/src
+        run: |
+          python tests/verify_phase6.py
+          python validation/warp_core/independent_warp_numerical_audit.py
+
+      - name: Toy-WARP-8 classical verification
+        run: |
+          python experiments/toywarp8_reference.py
+
+      - name: S-AES reference self-test
+        run: |
+          cd validation/cross_cipher
+          python saes_reference.py
+
+      - name: S-box optimality certificate
+        run: |
+          g++ -O3 -std=c++17 validation/sbox_optimality/sbox_nct_mitm_certificate.cpp -o /tmp/sbox_cert
+          /tmp/sbox_cert | tee SBOX_MITM_CERTIFICATE_CI.txt
+
+      - name: Toy-WARP-8 end-to-end Qiskit smoke test
+        run: |
+          python experiments/toywarp8_qiskit_end_to_end.py
+
+      - name: Upload resolved environment and certificates
+        uses: actions/upload-artifact@v4
+        with:
+          name: reproducibility-smoke-artifacts
+          path: |
+            environment-lock-ci.txt
+            SBOX_MITM_CERTIFICATE_CI.txt

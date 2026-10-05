@@ -1,0 +1,420 @@
+FINAL Toy-WARP-8 noise campaign
+Total jobs: 36
+Completed: 0
+Fixed transpiler seed: 777
+Simulator seeds: [101, 202, 303]
+Shots per seed: 4096
+Transpiling fixed circuit for j=3 ...
+  depth=3687
+Transpiling fixed circuit for j=6 ...
+  depth=7395
+Transpiling fixed circuit for j=9 ...
+  depth=11103
+Transpiling fixed circuit for j=12 ...
+  depth=14811
+
+[1/36] START ideal j=3 seed=101
+{'scenario': 'ideal', 'p1': 0.0, 'p2': 0.0, 'iterations': 3, 'requested_seed': 101, 'effective_seed': 101, 'correct': 718, 'shots': 4096, 'success': 0.17529296875, 'depth': 3687, 'elapsed_s': 9.87}
+
+[2/36] START ideal j=3 seed=202
+{'scenario': 'ideal', 'p1': 0.0, 'p2': 0.0, 'iterations': 3, 'requested_seed': 202, 'effective_seed': 202, 'correct': 743, 'shots': 4096, 'success': 0.181396484375, 'depth': 3687, 'elapsed_s': 9.86}
+
+[3/36] START ideal j=3 seed=303
+{'scenario': 'ideal', 'p1': 0.0, 'p2': 0.0, 'iterations': 3, 'requested_seed': 303, 'effective_seed': 303, 'correct': 724, 'shots': 4096, 'success': 0.1767578125, 'depth': 3687, 'elapsed_s': 9.97}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+
+[4/36] START ideal j=6 seed=101
+{'scenario': 'ideal', 'p1': 0.0, 'p2': 0.0, 'iterations': 6, 'requested_seed': 101, 'effective_seed': 101, 'correct': 2140, 'shots': 4096, 'success': 0.5224609375, 'depth': 7395, 'elapsed_s': 17.75}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+
+[5/36] START ideal j=6 seed=202
+{'scenario': 'ideal', 'p1': 0.0, 'p2': 0.0, 'iterations': 6, 'requested_seed': 202, 'effective_seed': 202, 'correct': 2167, 'shots': 4096, 'success': 0.529052734375, 'depth': 7395, 'elapsed_s': 17.43}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+
+[6/36] START ideal j=6 seed=303
+{'scenario': 'ideal', 'p1': 0.0, 'p2': 0.0, 'iterations': 6, 'requested_seed': 303, 'effective_seed': 303, 'correct': 2175, 'shots': 4096, 'success': 0.531005859375, 'depth': 7395, 'elapsed_s': 18.27}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+
+[7/36] START ideal j=9 seed=101
+{'scenario': 'ideal', 'p1': 0.0, 'p2': 0.0, 'iterations': 9, 'requested_seed': 101, 'effective_seed': 101, 'correct': 3505, 'shots': 4096, 'success': 0.855712890625, 'depth': 11103, 'elapsed_s': 23.66}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+
+[8/36] START ideal j=9 seed=202
+{'scenario': 'ideal', 'p1': 0.0, 'p2': 0.0, 'iterations': 9, 'requested_seed': 202, 'effective_seed': 202, 'correct': 3506, 'shots': 4096, 'success': 0.85595703125, 'depth': 11103, 'elapsed_s': 18.33}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+
+[9/36] START ideal j=9 seed=303
+{'scenario': 'ideal', 'p1': 0.0, 'p2': 0.0, 'iterations': 9, 'requested_seed': 303, 'effective_seed': 303, 'correct': 3539, 'shots': 4096, 'success': 0.864013671875, 'depth': 11103, 'elapsed_s': 17.73}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+{'scenario': 'ideal', 'iterations': 9, 'replicates': '0.855712890625;0.855957031250;0.864013671875', 'pooled_success': 0.8585611979166666, '95%CI': (0.8522877121706399, 0.8646105678406483), 'R99': 3, 'total_iter_99': 27}
+
+[10/36] START ideal j=12 seed=101
+{'scenario': 'ideal', 'p1': 0.0, 'p2': 0.0, 'iterations': 12, 'requested_seed': 101, 'effective_seed': 101, 'correct': 4095, 'shots': 4096, 'success': 0.999755859375, 'depth': 14811, 'elapsed_s': 28.16}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+{'scenario': 'ideal', 'iterations': 9, 'replicates': '0.855712890625;0.855957031250;0.864013671875', 'pooled_success': 0.8585611979166666, '95%CI': (0.8522877121706399, 0.8646105678406483), 'R99': 3, 'total_iter_99': 27}
+
+[11/36] START ideal j=12 seed=202
+{'scenario': 'ideal', 'p1': 0.0, 'p2': 0.0, 'iterations': 12, 'requested_seed': 202, 'effective_seed': 202, 'correct': 4096, 'shots': 4096, 'success': 1.0, 'depth': 14811, 'elapsed_s': 26.42}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+{'scenario': 'ideal', 'iterations': 9, 'replicates': '0.855712890625;0.855957031250;0.864013671875', 'pooled_success': 0.8585611979166666, '95%CI': (0.8522877121706399, 0.8646105678406483), 'R99': 3, 'total_iter_99': 27}
+
+[12/36] START ideal j=12 seed=303
+{'scenario': 'ideal', 'p1': 0.0, 'p2': 0.0, 'iterations': 12, 'requested_seed': 303, 'effective_seed': 303, 'correct': 4096, 'shots': 4096, 'success': 1.0, 'depth': 14811, 'elapsed_s': 26.02}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+{'scenario': 'ideal', 'iterations': 9, 'replicates': '0.855712890625;0.855957031250;0.864013671875', 'pooled_success': 0.8585611979166666, '95%CI': (0.8522877121706399, 0.8646105678406483), 'R99': 3, 'total_iter_99': 27}
+{'scenario': 'ideal', 'iterations': 12, 'replicates': '0.999755859375;1.000000000000;1.000000000000', 'pooled_success': 0.9999186197916666, '95%CI': (0.999539135179676, 0.999985634250497), 'R99': 1, 'total_iter_99': 12}
+
+[13/36] START mild j=3 seed=101
+{'scenario': 'mild', 'p1': 1e-05, 'p2': 0.0001, 'iterations': 3, 'requested_seed': 101, 'effective_seed': 101, 'correct': 568, 'shots': 4096, 'success': 0.138671875, 'depth': 3687, 'elapsed_s': 119.79}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+{'scenario': 'ideal', 'iterations': 9, 'replicates': '0.855712890625;0.855957031250;0.864013671875', 'pooled_success': 0.8585611979166666, '95%CI': (0.8522877121706399, 0.8646105678406483), 'R99': 3, 'total_iter_99': 27}
+{'scenario': 'ideal', 'iterations': 12, 'replicates': '0.999755859375;1.000000000000;1.000000000000', 'pooled_success': 0.9999186197916666, '95%CI': (0.999539135179676, 0.999985634250497), 'R99': 1, 'total_iter_99': 12}
+
+[14/36] START mild j=3 seed=202
+{'scenario': 'mild', 'p1': 1e-05, 'p2': 0.0001, 'iterations': 3, 'requested_seed': 202, 'effective_seed': 202, 'correct': 570, 'shots': 4096, 'success': 0.13916015625, 'depth': 3687, 'elapsed_s': 122.58}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+{'scenario': 'ideal', 'iterations': 9, 'replicates': '0.855712890625;0.855957031250;0.864013671875', 'pooled_success': 0.8585611979166666, '95%CI': (0.8522877121706399, 0.8646105678406483), 'R99': 3, 'total_iter_99': 27}
+{'scenario': 'ideal', 'iterations': 12, 'replicates': '0.999755859375;1.000000000000;1.000000000000', 'pooled_success': 0.9999186197916666, '95%CI': (0.999539135179676, 0.999985634250497), 'R99': 1, 'total_iter_99': 12}
+
+[15/36] START mild j=3 seed=303
+{'scenario': 'mild', 'p1': 1e-05, 'p2': 0.0001, 'iterations': 3, 'requested_seed': 303, 'effective_seed': 303, 'correct': 579, 'shots': 4096, 'success': 0.141357421875, 'depth': 3687, 'elapsed_s': 120.87}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+{'scenario': 'ideal', 'iterations': 9, 'replicates': '0.855712890625;0.855957031250;0.864013671875', 'pooled_success': 0.8585611979166666, '95%CI': (0.8522877121706399, 0.8646105678406483), 'R99': 3, 'total_iter_99': 27}
+{'scenario': 'ideal', 'iterations': 12, 'replicates': '0.999755859375;1.000000000000;1.000000000000', 'pooled_success': 0.9999186197916666, '95%CI': (0.999539135179676, 0.999985634250497), 'R99': 1, 'total_iter_99': 12}
+{'scenario': 'mild', 'iterations': 3, 'replicates': '0.138671875000;0.139160156250;0.141357421875', 'pooled_success': 0.13972981770833334, '95%CI': (0.13371220663677594, 0.14597261278901322), 'R99': 31, 'total_iter_99': 93}
+
+[16/36] START mild j=6 seed=101
+{'scenario': 'mild', 'p1': 1e-05, 'p2': 0.0001, 'iterations': 6, 'requested_seed': 101, 'effective_seed': 101, 'correct': 1464, 'shots': 4096, 'success': 0.357421875, 'depth': 7395, 'elapsed_s': 234.39}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+{'scenario': 'ideal', 'iterations': 9, 'replicates': '0.855712890625;0.855957031250;0.864013671875', 'pooled_success': 0.8585611979166666, '95%CI': (0.8522877121706399, 0.8646105678406483), 'R99': 3, 'total_iter_99': 27}
+{'scenario': 'ideal', 'iterations': 12, 'replicates': '0.999755859375;1.000000000000;1.000000000000', 'pooled_success': 0.9999186197916666, '95%CI': (0.999539135179676, 0.999985634250497), 'R99': 1, 'total_iter_99': 12}
+{'scenario': 'mild', 'iterations': 3, 'replicates': '0.138671875000;0.139160156250;0.141357421875', 'pooled_success': 0.13972981770833334, '95%CI': (0.13371220663677594, 0.14597261278901322), 'R99': 31, 'total_iter_99': 93}
+
+[17/36] START mild j=6 seed=202
+{'scenario': 'mild', 'p1': 1e-05, 'p2': 0.0001, 'iterations': 6, 'requested_seed': 202, 'effective_seed': 202, 'correct': 1471, 'shots': 4096, 'success': 0.359130859375, 'depth': 7395, 'elapsed_s': 233.66}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+{'scenario': 'ideal', 'iterations': 9, 'replicates': '0.855712890625;0.855957031250;0.864013671875', 'pooled_success': 0.8585611979166666, '95%CI': (0.8522877121706399, 0.8646105678406483), 'R99': 3, 'total_iter_99': 27}
+{'scenario': 'ideal', 'iterations': 12, 'replicates': '0.999755859375;1.000000000000;1.000000000000', 'pooled_success': 0.9999186197916666, '95%CI': (0.999539135179676, 0.999985634250497), 'R99': 1, 'total_iter_99': 12}
+{'scenario': 'mild', 'iterations': 3, 'replicates': '0.138671875000;0.139160156250;0.141357421875', 'pooled_success': 0.13972981770833334, '95%CI': (0.13371220663677594, 0.14597261278901322), 'R99': 31, 'total_iter_99': 93}
+
+[18/36] START mild j=6 seed=303
+{'scenario': 'mild', 'p1': 1e-05, 'p2': 0.0001, 'iterations': 6, 'requested_seed': 303, 'effective_seed': 303, 'correct': 1467, 'shots': 4096, 'success': 0.358154296875, 'depth': 7395, 'elapsed_s': 227.37}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+{'scenario': 'ideal', 'iterations': 9, 'replicates': '0.855712890625;0.855957031250;0.864013671875', 'pooled_success': 0.8585611979166666, '95%CI': (0.8522877121706399, 0.8646105678406483), 'R99': 3, 'total_iter_99': 27}
+{'scenario': 'ideal', 'iterations': 12, 'replicates': '0.999755859375;1.000000000000;1.000000000000', 'pooled_success': 0.9999186197916666, '95%CI': (0.999539135179676, 0.999985634250497), 'R99': 1, 'total_iter_99': 12}
+{'scenario': 'mild', 'iterations': 3, 'replicates': '0.138671875000;0.139160156250;0.141357421875', 'pooled_success': 0.13972981770833334, '95%CI': (0.13371220663677594, 0.14597261278901322), 'R99': 31, 'total_iter_99': 93}
+{'scenario': 'mild', 'iterations': 6, 'replicates': '0.357421875000;0.359130859375;0.358154296875', 'pooled_success': 0.3582356770833333, '95%CI': (0.3498034582922077, 0.3667565045358303), 'R99': 11, 'total_iter_99': 66}
+
+[19/36] START mild j=9 seed=101
+{'scenario': 'mild', 'p1': 1e-05, 'p2': 0.0001, 'iterations': 9, 'requested_seed': 101, 'effective_seed': 101, 'correct': 1958, 'shots': 4096, 'success': 0.47802734375, 'depth': 11103, 'elapsed_s': 349.75}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+{'scenario': 'ideal', 'iterations': 9, 'replicates': '0.855712890625;0.855957031250;0.864013671875', 'pooled_success': 0.8585611979166666, '95%CI': (0.8522877121706399, 0.8646105678406483), 'R99': 3, 'total_iter_99': 27}
+{'scenario': 'ideal', 'iterations': 12, 'replicates': '0.999755859375;1.000000000000;1.000000000000', 'pooled_success': 0.9999186197916666, '95%CI': (0.999539135179676, 0.999985634250497), 'R99': 1, 'total_iter_99': 12}
+{'scenario': 'mild', 'iterations': 3, 'replicates': '0.138671875000;0.139160156250;0.141357421875', 'pooled_success': 0.13972981770833334, '95%CI': (0.13371220663677594, 0.14597261278901322), 'R99': 31, 'total_iter_99': 93}
+{'scenario': 'mild', 'iterations': 6, 'replicates': '0.357421875000;0.359130859375;0.358154296875', 'pooled_success': 0.3582356770833333, '95%CI': (0.3498034582922077, 0.3667565045358303), 'R99': 11, 'total_iter_99': 66}
+
+[20/36] START mild j=9 seed=202
+{'scenario': 'mild', 'p1': 1e-05, 'p2': 0.0001, 'iterations': 9, 'requested_seed': 202, 'effective_seed': 202, 'correct': 1960, 'shots': 4096, 'success': 0.478515625, 'depth': 11103, 'elapsed_s': 342.67}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+{'scenario': 'ideal', 'iterations': 9, 'replicates': '0.855712890625;0.855957031250;0.864013671875', 'pooled_success': 0.8585611979166666, '95%CI': (0.8522877121706399, 0.8646105678406483), 'R99': 3, 'total_iter_99': 27}
+{'scenario': 'ideal', 'iterations': 12, 'replicates': '0.999755859375;1.000000000000;1.000000000000', 'pooled_success': 0.9999186197916666, '95%CI': (0.999539135179676, 0.999985634250497), 'R99': 1, 'total_iter_99': 12}
+{'scenario': 'mild', 'iterations': 3, 'replicates': '0.138671875000;0.139160156250;0.141357421875', 'pooled_success': 0.13972981770833334, '95%CI': (0.13371220663677594, 0.14597261278901322), 'R99': 31, 'total_iter_99': 93}
+{'scenario': 'mild', 'iterations': 6, 'replicates': '0.357421875000;0.359130859375;0.358154296875', 'pooled_success': 0.3582356770833333, '95%CI': (0.3498034582922077, 0.3667565045358303), 'R99': 11, 'total_iter_99': 66}
+
+[21/36] START mild j=9 seed=303
+{'scenario': 'mild', 'p1': 1e-05, 'p2': 0.0001, 'iterations': 9, 'requested_seed': 303, 'effective_seed': 303, 'correct': 1964, 'shots': 4096, 'success': 0.4794921875, 'depth': 11103, 'elapsed_s': 348.42}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+{'scenario': 'ideal', 'iterations': 9, 'replicates': '0.855712890625;0.855957031250;0.864013671875', 'pooled_success': 0.8585611979166666, '95%CI': (0.8522877121706399, 0.8646105678406483), 'R99': 3, 'total_iter_99': 27}
+{'scenario': 'ideal', 'iterations': 12, 'replicates': '0.999755859375;1.000000000000;1.000000000000', 'pooled_success': 0.9999186197916666, '95%CI': (0.999539135179676, 0.999985634250497), 'R99': 1, 'total_iter_99': 12}
+{'scenario': 'mild', 'iterations': 3, 'replicates': '0.138671875000;0.139160156250;0.141357421875', 'pooled_success': 0.13972981770833334, '95%CI': (0.13371220663677594, 0.14597261278901322), 'R99': 31, 'total_iter_99': 93}
+{'scenario': 'mild', 'iterations': 6, 'replicates': '0.357421875000;0.359130859375;0.358154296875', 'pooled_success': 0.3582356770833333, '95%CI': (0.3498034582922077, 0.3667565045358303), 'R99': 11, 'total_iter_99': 66}
+{'scenario': 'mild', 'iterations': 9, 'replicates': '0.478027343750;0.478515625000;0.479492187500', 'pooled_success': 0.4786783854166667, '95%CI': (0.4698539547336807, 0.4875161430050943), 'R99': 8, 'total_iter_99': 72}
+
+[22/36] START mild j=12 seed=101
+{'scenario': 'mild', 'p1': 1e-05, 'p2': 0.0001, 'iterations': 12, 'requested_seed': 101, 'effective_seed': 101, 'correct': 2141, 'shots': 4096, 'success': 0.522705078125, 'depth': 14811, 'elapsed_s': 457.77}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+{'scenario': 'ideal', 'iterations': 9, 'replicates': '0.855712890625;0.855957031250;0.864013671875', 'pooled_success': 0.8585611979166666, '95%CI': (0.8522877121706399, 0.8646105678406483), 'R99': 3, 'total_iter_99': 27}
+{'scenario': 'ideal', 'iterations': 12, 'replicates': '0.999755859375;1.000000000000;1.000000000000', 'pooled_success': 0.9999186197916666, '95%CI': (0.999539135179676, 0.999985634250497), 'R99': 1, 'total_iter_99': 12}
+{'scenario': 'mild', 'iterations': 3, 'replicates': '0.138671875000;0.139160156250;0.141357421875', 'pooled_success': 0.13972981770833334, '95%CI': (0.13371220663677594, 0.14597261278901322), 'R99': 31, 'total_iter_99': 93}
+{'scenario': 'mild', 'iterations': 6, 'replicates': '0.357421875000;0.359130859375;0.358154296875', 'pooled_success': 0.3582356770833333, '95%CI': (0.3498034582922077, 0.3667565045358303), 'R99': 11, 'total_iter_99': 66}
+{'scenario': 'mild', 'iterations': 9, 'replicates': '0.478027343750;0.478515625000;0.479492187500', 'pooled_success': 0.4786783854166667, '95%CI': (0.4698539547336807, 0.4875161430050943), 'R99': 8, 'total_iter_99': 72}
+
+[23/36] START mild j=12 seed=202
+{'scenario': 'mild', 'p1': 1e-05, 'p2': 0.0001, 'iterations': 12, 'requested_seed': 202, 'effective_seed': 202, 'correct': 2141, 'shots': 4096, 'success': 0.522705078125, 'depth': 14811, 'elapsed_s': 466.51}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+{'scenario': 'ideal', 'iterations': 9, 'replicates': '0.855712890625;0.855957031250;0.864013671875', 'pooled_success': 0.8585611979166666, '95%CI': (0.8522877121706399, 0.8646105678406483), 'R99': 3, 'total_iter_99': 27}
+{'scenario': 'ideal', 'iterations': 12, 'replicates': '0.999755859375;1.000000000000;1.000000000000', 'pooled_success': 0.9999186197916666, '95%CI': (0.999539135179676, 0.999985634250497), 'R99': 1, 'total_iter_99': 12}
+{'scenario': 'mild', 'iterations': 3, 'replicates': '0.138671875000;0.139160156250;0.141357421875', 'pooled_success': 0.13972981770833334, '95%CI': (0.13371220663677594, 0.14597261278901322), 'R99': 31, 'total_iter_99': 93}
+{'scenario': 'mild', 'iterations': 6, 'replicates': '0.357421875000;0.359130859375;0.358154296875', 'pooled_success': 0.3582356770833333, '95%CI': (0.3498034582922077, 0.3667565045358303), 'R99': 11, 'total_iter_99': 66}
+{'scenario': 'mild', 'iterations': 9, 'replicates': '0.478027343750;0.478515625000;0.479492187500', 'pooled_success': 0.4786783854166667, '95%CI': (0.4698539547336807, 0.4875161430050943), 'R99': 8, 'total_iter_99': 72}
+
+[24/36] START mild j=12 seed=303
+{'scenario': 'mild', 'p1': 1e-05, 'p2': 0.0001, 'iterations': 12, 'requested_seed': 303, 'effective_seed': 303, 'correct': 2150, 'shots': 4096, 'success': 0.52490234375, 'depth': 14811, 'elapsed_s': 473.6}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+{'scenario': 'ideal', 'iterations': 9, 'replicates': '0.855712890625;0.855957031250;0.864013671875', 'pooled_success': 0.8585611979166666, '95%CI': (0.8522877121706399, 0.8646105678406483), 'R99': 3, 'total_iter_99': 27}
+{'scenario': 'ideal', 'iterations': 12, 'replicates': '0.999755859375;1.000000000000;1.000000000000', 'pooled_success': 0.9999186197916666, '95%CI': (0.999539135179676, 0.999985634250497), 'R99': 1, 'total_iter_99': 12}
+{'scenario': 'mild', 'iterations': 3, 'replicates': '0.138671875000;0.139160156250;0.141357421875', 'pooled_success': 0.13972981770833334, '95%CI': (0.13371220663677594, 0.14597261278901322), 'R99': 31, 'total_iter_99': 93}
+{'scenario': 'mild', 'iterations': 6, 'replicates': '0.357421875000;0.359130859375;0.358154296875', 'pooled_success': 0.3582356770833333, '95%CI': (0.3498034582922077, 0.3667565045358303), 'R99': 11, 'total_iter_99': 66}
+{'scenario': 'mild', 'iterations': 9, 'replicates': '0.478027343750;0.478515625000;0.479492187500', 'pooled_success': 0.4786783854166667, '95%CI': (0.4698539547336807, 0.4875161430050943), 'R99': 8, 'total_iter_99': 72}
+{'scenario': 'mild', 'iterations': 12, 'replicates': '0.522705078125;0.522705078125;0.524902343750', 'pooled_success': 0.5234375, '95%CI': (0.5146007565347493, 0.5322595940424751), 'R99': 7, 'total_iter_99': 84}
+
+[25/36] START strong j=3 seed=101
+{'scenario': 'strong', 'p1': 0.0001, 'p2': 0.001, 'iterations': 3, 'requested_seed': 101, 'effective_seed': 101, 'correct': 114, 'shots': 4096, 'success': 0.02783203125, 'depth': 3687, 'elapsed_s': 127.58}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+{'scenario': 'ideal', 'iterations': 9, 'replicates': '0.855712890625;0.855957031250;0.864013671875', 'pooled_success': 0.8585611979166666, '95%CI': (0.8522877121706399, 0.8646105678406483), 'R99': 3, 'total_iter_99': 27}
+{'scenario': 'ideal', 'iterations': 12, 'replicates': '0.999755859375;1.000000000000;1.000000000000', 'pooled_success': 0.9999186197916666, '95%CI': (0.999539135179676, 0.999985634250497), 'R99': 1, 'total_iter_99': 12}
+{'scenario': 'mild', 'iterations': 3, 'replicates': '0.138671875000;0.139160156250;0.141357421875', 'pooled_success': 0.13972981770833334, '95%CI': (0.13371220663677594, 0.14597261278901322), 'R99': 31, 'total_iter_99': 93}
+{'scenario': 'mild', 'iterations': 6, 'replicates': '0.357421875000;0.359130859375;0.358154296875', 'pooled_success': 0.3582356770833333, '95%CI': (0.3498034582922077, 0.3667565045358303), 'R99': 11, 'total_iter_99': 66}
+{'scenario': 'mild', 'iterations': 9, 'replicates': '0.478027343750;0.478515625000;0.479492187500', 'pooled_success': 0.4786783854166667, '95%CI': (0.4698539547336807, 0.4875161430050943), 'R99': 8, 'total_iter_99': 72}
+{'scenario': 'mild', 'iterations': 12, 'replicates': '0.522705078125;0.522705078125;0.524902343750', 'pooled_success': 0.5234375, '95%CI': (0.5146007565347493, 0.5322595940424751), 'R99': 7, 'total_iter_99': 84}
+
+[26/36] START strong j=3 seed=202
+{'scenario': 'strong', 'p1': 0.0001, 'p2': 0.001, 'iterations': 3, 'requested_seed': 202, 'effective_seed': 202, 'correct': 112, 'shots': 4096, 'success': 0.02734375, 'depth': 3687, 'elapsed_s': 120.88}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+{'scenario': 'ideal', 'iterations': 9, 'replicates': '0.855712890625;0.855957031250;0.864013671875', 'pooled_success': 0.8585611979166666, '95%CI': (0.8522877121706399, 0.8646105678406483), 'R99': 3, 'total_iter_99': 27}
+{'scenario': 'ideal', 'iterations': 12, 'replicates': '0.999755859375;1.000000000000;1.000000000000', 'pooled_success': 0.9999186197916666, '95%CI': (0.999539135179676, 0.999985634250497), 'R99': 1, 'total_iter_99': 12}
+{'scenario': 'mild', 'iterations': 3, 'replicates': '0.138671875000;0.139160156250;0.141357421875', 'pooled_success': 0.13972981770833334, '95%CI': (0.13371220663677594, 0.14597261278901322), 'R99': 31, 'total_iter_99': 93}
+{'scenario': 'mild', 'iterations': 6, 'replicates': '0.357421875000;0.359130859375;0.358154296875', 'pooled_success': 0.3582356770833333, '95%CI': (0.3498034582922077, 0.3667565045358303), 'R99': 11, 'total_iter_99': 66}
+{'scenario': 'mild', 'iterations': 9, 'replicates': '0.478027343750;0.478515625000;0.479492187500', 'pooled_success': 0.4786783854166667, '95%CI': (0.4698539547336807, 0.4875161430050943), 'R99': 8, 'total_iter_99': 72}
+{'scenario': 'mild', 'iterations': 12, 'replicates': '0.522705078125;0.522705078125;0.524902343750', 'pooled_success': 0.5234375, '95%CI': (0.5146007565347493, 0.5322595940424751), 'R99': 7, 'total_iter_99': 84}
+
+[27/36] START strong j=3 seed=303
+{'scenario': 'strong', 'p1': 0.0001, 'p2': 0.001, 'iterations': 3, 'requested_seed': 303, 'effective_seed': 303, 'correct': 113, 'shots': 4096, 'success': 0.027587890625, 'depth': 3687, 'elapsed_s': 117.22}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+{'scenario': 'ideal', 'iterations': 9, 'replicates': '0.855712890625;0.855957031250;0.864013671875', 'pooled_success': 0.8585611979166666, '95%CI': (0.8522877121706399, 0.8646105678406483), 'R99': 3, 'total_iter_99': 27}
+{'scenario': 'ideal', 'iterations': 12, 'replicates': '0.999755859375;1.000000000000;1.000000000000', 'pooled_success': 0.9999186197916666, '95%CI': (0.999539135179676, 0.999985634250497), 'R99': 1, 'total_iter_99': 12}
+{'scenario': 'mild', 'iterations': 3, 'replicates': '0.138671875000;0.139160156250;0.141357421875', 'pooled_success': 0.13972981770833334, '95%CI': (0.13371220663677594, 0.14597261278901322), 'R99': 31, 'total_iter_99': 93}
+{'scenario': 'mild', 'iterations': 6, 'replicates': '0.357421875000;0.359130859375;0.358154296875', 'pooled_success': 0.3582356770833333, '95%CI': (0.3498034582922077, 0.3667565045358303), 'R99': 11, 'total_iter_99': 66}
+{'scenario': 'mild', 'iterations': 9, 'replicates': '0.478027343750;0.478515625000;0.479492187500', 'pooled_success': 0.4786783854166667, '95%CI': (0.4698539547336807, 0.4875161430050943), 'R99': 8, 'total_iter_99': 72}
+{'scenario': 'mild', 'iterations': 12, 'replicates': '0.522705078125;0.522705078125;0.524902343750', 'pooled_success': 0.5234375, '95%CI': (0.5146007565347493, 0.5322595940424751), 'R99': 7, 'total_iter_99': 84}
+{'scenario': 'strong', 'iterations': 3, 'replicates': '0.027832031250;0.027343750000;0.027587890625', 'pooled_success': 0.027587890625, '95%CI': (0.024836264651233373, 0.030634794026585883), 'R99': 165, 'total_iter_99': 495}
+
+[28/36] START strong j=6 seed=101
+{'scenario': 'strong', 'p1': 0.0001, 'p2': 0.001, 'iterations': 6, 'requested_seed': 101, 'effective_seed': 101, 'correct': 97, 'shots': 4096, 'success': 0.023681640625, 'depth': 7395, 'elapsed_s': 235.9}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+{'scenario': 'ideal', 'iterations': 9, 'replicates': '0.855712890625;0.855957031250;0.864013671875', 'pooled_success': 0.8585611979166666, '95%CI': (0.8522877121706399, 0.8646105678406483), 'R99': 3, 'total_iter_99': 27}
+{'scenario': 'ideal', 'iterations': 12, 'replicates': '0.999755859375;1.000000000000;1.000000000000', 'pooled_success': 0.9999186197916666, '95%CI': (0.999539135179676, 0.999985634250497), 'R99': 1, 'total_iter_99': 12}
+{'scenario': 'mild', 'iterations': 3, 'replicates': '0.138671875000;0.139160156250;0.141357421875', 'pooled_success': 0.13972981770833334, '95%CI': (0.13371220663677594, 0.14597261278901322), 'R99': 31, 'total_iter_99': 93}
+{'scenario': 'mild', 'iterations': 6, 'replicates': '0.357421875000;0.359130859375;0.358154296875', 'pooled_success': 0.3582356770833333, '95%CI': (0.3498034582922077, 0.3667565045358303), 'R99': 11, 'total_iter_99': 66}
+{'scenario': 'mild', 'iterations': 9, 'replicates': '0.478027343750;0.478515625000;0.479492187500', 'pooled_success': 0.4786783854166667, '95%CI': (0.4698539547336807, 0.4875161430050943), 'R99': 8, 'total_iter_99': 72}
+{'scenario': 'mild', 'iterations': 12, 'replicates': '0.522705078125;0.522705078125;0.524902343750', 'pooled_success': 0.5234375, '95%CI': (0.5146007565347493, 0.5322595940424751), 'R99': 7, 'total_iter_99': 84}
+{'scenario': 'strong', 'iterations': 3, 'replicates': '0.027832031250;0.027343750000;0.027587890625', 'pooled_success': 0.027587890625, '95%CI': (0.024836264651233373, 0.030634794026585883), 'R99': 165, 'total_iter_99': 495}
+
+[29/36] START strong j=6 seed=202
+{'scenario': 'strong', 'p1': 0.0001, 'p2': 0.001, 'iterations': 6, 'requested_seed': 202, 'effective_seed': 202, 'correct': 96, 'shots': 4096, 'success': 0.0234375, 'depth': 7395, 'elapsed_s': 236.68}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+{'scenario': 'ideal', 'iterations': 9, 'replicates': '0.855712890625;0.855957031250;0.864013671875', 'pooled_success': 0.8585611979166666, '95%CI': (0.8522877121706399, 0.8646105678406483), 'R99': 3, 'total_iter_99': 27}
+{'scenario': 'ideal', 'iterations': 12, 'replicates': '0.999755859375;1.000000000000;1.000000000000', 'pooled_success': 0.9999186197916666, '95%CI': (0.999539135179676, 0.999985634250497), 'R99': 1, 'total_iter_99': 12}
+{'scenario': 'mild', 'iterations': 3, 'replicates': '0.138671875000;0.139160156250;0.141357421875', 'pooled_success': 0.13972981770833334, '95%CI': (0.13371220663677594, 0.14597261278901322), 'R99': 31, 'total_iter_99': 93}
+{'scenario': 'mild', 'iterations': 6, 'replicates': '0.357421875000;0.359130859375;0.358154296875', 'pooled_success': 0.3582356770833333, '95%CI': (0.3498034582922077, 0.3667565045358303), 'R99': 11, 'total_iter_99': 66}
+{'scenario': 'mild', 'iterations': 9, 'replicates': '0.478027343750;0.478515625000;0.479492187500', 'pooled_success': 0.4786783854166667, '95%CI': (0.4698539547336807, 0.4875161430050943), 'R99': 8, 'total_iter_99': 72}
+{'scenario': 'mild', 'iterations': 12, 'replicates': '0.522705078125;0.522705078125;0.524902343750', 'pooled_success': 0.5234375, '95%CI': (0.5146007565347493, 0.5322595940424751), 'R99': 7, 'total_iter_99': 84}
+{'scenario': 'strong', 'iterations': 3, 'replicates': '0.027832031250;0.027343750000;0.027587890625', 'pooled_success': 0.027587890625, '95%CI': (0.024836264651233373, 0.030634794026585883), 'R99': 165, 'total_iter_99': 495}
+
+[30/36] START strong j=6 seed=303
+{'scenario': 'strong', 'p1': 0.0001, 'p2': 0.001, 'iterations': 6, 'requested_seed': 303, 'effective_seed': 303, 'correct': 96, 'shots': 4096, 'success': 0.0234375, 'depth': 7395, 'elapsed_s': 229.68}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+{'scenario': 'ideal', 'iterations': 9, 'replicates': '0.855712890625;0.855957031250;0.864013671875', 'pooled_success': 0.8585611979166666, '95%CI': (0.8522877121706399, 0.8646105678406483), 'R99': 3, 'total_iter_99': 27}
+{'scenario': 'ideal', 'iterations': 12, 'replicates': '0.999755859375;1.000000000000;1.000000000000', 'pooled_success': 0.9999186197916666, '95%CI': (0.999539135179676, 0.999985634250497), 'R99': 1, 'total_iter_99': 12}
+{'scenario': 'mild', 'iterations': 3, 'replicates': '0.138671875000;0.139160156250;0.141357421875', 'pooled_success': 0.13972981770833334, '95%CI': (0.13371220663677594, 0.14597261278901322), 'R99': 31, 'total_iter_99': 93}
+{'scenario': 'mild', 'iterations': 6, 'replicates': '0.357421875000;0.359130859375;0.358154296875', 'pooled_success': 0.3582356770833333, '95%CI': (0.3498034582922077, 0.3667565045358303), 'R99': 11, 'total_iter_99': 66}
+{'scenario': 'mild', 'iterations': 9, 'replicates': '0.478027343750;0.478515625000;0.479492187500', 'pooled_success': 0.4786783854166667, '95%CI': (0.4698539547336807, 0.4875161430050943), 'R99': 8, 'total_iter_99': 72}
+{'scenario': 'mild', 'iterations': 12, 'replicates': '0.522705078125;0.522705078125;0.524902343750', 'pooled_success': 0.5234375, '95%CI': (0.5146007565347493, 0.5322595940424751), 'R99': 7, 'total_iter_99': 84}
+{'scenario': 'strong', 'iterations': 3, 'replicates': '0.027832031250;0.027343750000;0.027587890625', 'pooled_success': 0.027587890625, '95%CI': (0.024836264651233373, 0.030634794026585883), 'R99': 165, 'total_iter_99': 495}
+{'scenario': 'strong', 'iterations': 6, 'replicates': '0.023681640625;0.023437500000;0.023437500000', 'pooled_success': 0.023518880208333332, '95%CI': (0.020984611201156845, 0.02635096994589427), 'R99': 194, 'total_iter_99': 1164}
+
+[31/36] START strong j=9 seed=101
+{'scenario': 'strong', 'p1': 0.0001, 'p2': 0.001, 'iterations': 9, 'requested_seed': 101, 'effective_seed': 101, 'correct': 81, 'shots': 4096, 'success': 0.019775390625, 'depth': 11103, 'elapsed_s': 341.1}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+{'scenario': 'ideal', 'iterations': 9, 'replicates': '0.855712890625;0.855957031250;0.864013671875', 'pooled_success': 0.8585611979166666, '95%CI': (0.8522877121706399, 0.8646105678406483), 'R99': 3, 'total_iter_99': 27}
+{'scenario': 'ideal', 'iterations': 12, 'replicates': '0.999755859375;1.000000000000;1.000000000000', 'pooled_success': 0.9999186197916666, '95%CI': (0.999539135179676, 0.999985634250497), 'R99': 1, 'total_iter_99': 12}
+{'scenario': 'mild', 'iterations': 3, 'replicates': '0.138671875000;0.139160156250;0.141357421875', 'pooled_success': 0.13972981770833334, '95%CI': (0.13371220663677594, 0.14597261278901322), 'R99': 31, 'total_iter_99': 93}
+{'scenario': 'mild', 'iterations': 6, 'replicates': '0.357421875000;0.359130859375;0.358154296875', 'pooled_success': 0.3582356770833333, '95%CI': (0.3498034582922077, 0.3667565045358303), 'R99': 11, 'total_iter_99': 66}
+{'scenario': 'mild', 'iterations': 9, 'replicates': '0.478027343750;0.478515625000;0.479492187500', 'pooled_success': 0.4786783854166667, '95%CI': (0.4698539547336807, 0.4875161430050943), 'R99': 8, 'total_iter_99': 72}
+{'scenario': 'mild', 'iterations': 12, 'replicates': '0.522705078125;0.522705078125;0.524902343750', 'pooled_success': 0.5234375, '95%CI': (0.5146007565347493, 0.5322595940424751), 'R99': 7, 'total_iter_99': 84}
+{'scenario': 'strong', 'iterations': 3, 'replicates': '0.027832031250;0.027343750000;0.027587890625', 'pooled_success': 0.027587890625, '95%CI': (0.024836264651233373, 0.030634794026585883), 'R99': 165, 'total_iter_99': 495}
+{'scenario': 'strong', 'iterations': 6, 'replicates': '0.023681640625;0.023437500000;0.023437500000', 'pooled_success': 0.023518880208333332, '95%CI': (0.020984611201156845, 0.02635096994589427), 'R99': 194, 'total_iter_99': 1164}
+
+[32/36] START strong j=9 seed=202
+{'scenario': 'strong', 'p1': 0.0001, 'p2': 0.001, 'iterations': 9, 'requested_seed': 202, 'effective_seed': 202, 'correct': 84, 'shots': 4096, 'success': 0.0205078125, 'depth': 11103, 'elapsed_s': 351.01}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+{'scenario': 'ideal', 'iterations': 9, 'replicates': '0.855712890625;0.855957031250;0.864013671875', 'pooled_success': 0.8585611979166666, '95%CI': (0.8522877121706399, 0.8646105678406483), 'R99': 3, 'total_iter_99': 27}
+{'scenario': 'ideal', 'iterations': 12, 'replicates': '0.999755859375;1.000000000000;1.000000000000', 'pooled_success': 0.9999186197916666, '95%CI': (0.999539135179676, 0.999985634250497), 'R99': 1, 'total_iter_99': 12}
+{'scenario': 'mild', 'iterations': 3, 'replicates': '0.138671875000;0.139160156250;0.141357421875', 'pooled_success': 0.13972981770833334, '95%CI': (0.13371220663677594, 0.14597261278901322), 'R99': 31, 'total_iter_99': 93}
+{'scenario': 'mild', 'iterations': 6, 'replicates': '0.357421875000;0.359130859375;0.358154296875', 'pooled_success': 0.3582356770833333, '95%CI': (0.3498034582922077, 0.3667565045358303), 'R99': 11, 'total_iter_99': 66}
+{'scenario': 'mild', 'iterations': 9, 'replicates': '0.478027343750;0.478515625000;0.479492187500', 'pooled_success': 0.4786783854166667, '95%CI': (0.4698539547336807, 0.4875161430050943), 'R99': 8, 'total_iter_99': 72}
+{'scenario': 'mild', 'iterations': 12, 'replicates': '0.522705078125;0.522705078125;0.524902343750', 'pooled_success': 0.5234375, '95%CI': (0.5146007565347493, 0.5322595940424751), 'R99': 7, 'total_iter_99': 84}
+{'scenario': 'strong', 'iterations': 3, 'replicates': '0.027832031250;0.027343750000;0.027587890625', 'pooled_success': 0.027587890625, '95%CI': (0.024836264651233373, 0.030634794026585883), 'R99': 165, 'total_iter_99': 495}
+{'scenario': 'strong', 'iterations': 6, 'replicates': '0.023681640625;0.023437500000;0.023437500000', 'pooled_success': 0.023518880208333332, '95%CI': (0.020984611201156845, 0.02635096994589427), 'R99': 194, 'total_iter_99': 1164}
+
+[33/36] START strong j=9 seed=303
+{'scenario': 'strong', 'p1': 0.0001, 'p2': 0.001, 'iterations': 9, 'requested_seed': 303, 'effective_seed': 303, 'correct': 84, 'shots': 4096, 'success': 0.0205078125, 'depth': 11103, 'elapsed_s': 353.34}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+{'scenario': 'ideal', 'iterations': 9, 'replicates': '0.855712890625;0.855957031250;0.864013671875', 'pooled_success': 0.8585611979166666, '95%CI': (0.8522877121706399, 0.8646105678406483), 'R99': 3, 'total_iter_99': 27}
+{'scenario': 'ideal', 'iterations': 12, 'replicates': '0.999755859375;1.000000000000;1.000000000000', 'pooled_success': 0.9999186197916666, '95%CI': (0.999539135179676, 0.999985634250497), 'R99': 1, 'total_iter_99': 12}
+{'scenario': 'mild', 'iterations': 3, 'replicates': '0.138671875000;0.139160156250;0.141357421875', 'pooled_success': 0.13972981770833334, '95%CI': (0.13371220663677594, 0.14597261278901322), 'R99': 31, 'total_iter_99': 93}
+{'scenario': 'mild', 'iterations': 6, 'replicates': '0.357421875000;0.359130859375;0.358154296875', 'pooled_success': 0.3582356770833333, '95%CI': (0.3498034582922077, 0.3667565045358303), 'R99': 11, 'total_iter_99': 66}
+{'scenario': 'mild', 'iterations': 9, 'replicates': '0.478027343750;0.478515625000;0.479492187500', 'pooled_success': 0.4786783854166667, '95%CI': (0.4698539547336807, 0.4875161430050943), 'R99': 8, 'total_iter_99': 72}
+{'scenario': 'mild', 'iterations': 12, 'replicates': '0.522705078125;0.522705078125;0.524902343750', 'pooled_success': 0.5234375, '95%CI': (0.5146007565347493, 0.5322595940424751), 'R99': 7, 'total_iter_99': 84}
+{'scenario': 'strong', 'iterations': 3, 'replicates': '0.027832031250;0.027343750000;0.027587890625', 'pooled_success': 0.027587890625, '95%CI': (0.024836264651233373, 0.030634794026585883), 'R99': 165, 'total_iter_99': 495}
+{'scenario': 'strong', 'iterations': 6, 'replicates': '0.023681640625;0.023437500000;0.023437500000', 'pooled_success': 0.023518880208333332, '95%CI': (0.020984611201156845, 0.02635096994589427), 'R99': 194, 'total_iter_99': 1164}
+{'scenario': 'strong', 'iterations': 9, 'replicates': '0.019775390625;0.020507812500;0.020507812500', 'pooled_success': 0.020263671875, '95%CI': (0.017918208721436003, 0.0229089904010006), 'R99': 225, 'total_iter_99': 2025}
+
+[34/36] START strong j=12 seed=101
+{'scenario': 'strong', 'p1': 0.0001, 'p2': 0.001, 'iterations': 12, 'requested_seed': 101, 'effective_seed': 101, 'correct': 61, 'shots': 4096, 'success': 0.014892578125, 'depth': 14811, 'elapsed_s': 460.22}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+{'scenario': 'ideal', 'iterations': 9, 'replicates': '0.855712890625;0.855957031250;0.864013671875', 'pooled_success': 0.8585611979166666, '95%CI': (0.8522877121706399, 0.8646105678406483), 'R99': 3, 'total_iter_99': 27}
+{'scenario': 'ideal', 'iterations': 12, 'replicates': '0.999755859375;1.000000000000;1.000000000000', 'pooled_success': 0.9999186197916666, '95%CI': (0.999539135179676, 0.999985634250497), 'R99': 1, 'total_iter_99': 12}
+{'scenario': 'mild', 'iterations': 3, 'replicates': '0.138671875000;0.139160156250;0.141357421875', 'pooled_success': 0.13972981770833334, '95%CI': (0.13371220663677594, 0.14597261278901322), 'R99': 31, 'total_iter_99': 93}
+{'scenario': 'mild', 'iterations': 6, 'replicates': '0.357421875000;0.359130859375;0.358154296875', 'pooled_success': 0.3582356770833333, '95%CI': (0.3498034582922077, 0.3667565045358303), 'R99': 11, 'total_iter_99': 66}
+{'scenario': 'mild', 'iterations': 9, 'replicates': '0.478027343750;0.478515625000;0.479492187500', 'pooled_success': 0.4786783854166667, '95%CI': (0.4698539547336807, 0.4875161430050943), 'R99': 8, 'total_iter_99': 72}
+{'scenario': 'mild', 'iterations': 12, 'replicates': '0.522705078125;0.522705078125;0.524902343750', 'pooled_success': 0.5234375, '95%CI': (0.5146007565347493, 0.5322595940424751), 'R99': 7, 'total_iter_99': 84}
+{'scenario': 'strong', 'iterations': 3, 'replicates': '0.027832031250;0.027343750000;0.027587890625', 'pooled_success': 0.027587890625, '95%CI': (0.024836264651233373, 0.030634794026585883), 'R99': 165, 'total_iter_99': 495}
+{'scenario': 'strong', 'iterations': 6, 'replicates': '0.023681640625;0.023437500000;0.023437500000', 'pooled_success': 0.023518880208333332, '95%CI': (0.020984611201156845, 0.02635096994589427), 'R99': 194, 'total_iter_99': 1164}
+{'scenario': 'strong', 'iterations': 9, 'replicates': '0.019775390625;0.020507812500;0.020507812500', 'pooled_success': 0.020263671875, '95%CI': (0.017918208721436003, 0.0229089904010006), 'R99': 225, 'total_iter_99': 2025}
+
+[35/36] START strong j=12 seed=202
+{'scenario': 'strong', 'p1': 0.0001, 'p2': 0.001, 'iterations': 12, 'requested_seed': 202, 'effective_seed': 202, 'correct': 58, 'shots': 4096, 'success': 0.01416015625, 'depth': 14811, 'elapsed_s': 461.03}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+{'scenario': 'ideal', 'iterations': 9, 'replicates': '0.855712890625;0.855957031250;0.864013671875', 'pooled_success': 0.8585611979166666, '95%CI': (0.8522877121706399, 0.8646105678406483), 'R99': 3, 'total_iter_99': 27}
+{'scenario': 'ideal', 'iterations': 12, 'replicates': '0.999755859375;1.000000000000;1.000000000000', 'pooled_success': 0.9999186197916666, '95%CI': (0.999539135179676, 0.999985634250497), 'R99': 1, 'total_iter_99': 12}
+{'scenario': 'mild', 'iterations': 3, 'replicates': '0.138671875000;0.139160156250;0.141357421875', 'pooled_success': 0.13972981770833334, '95%CI': (0.13371220663677594, 0.14597261278901322), 'R99': 31, 'total_iter_99': 93}
+{'scenario': 'mild', 'iterations': 6, 'replicates': '0.357421875000;0.359130859375;0.358154296875', 'pooled_success': 0.3582356770833333, '95%CI': (0.3498034582922077, 0.3667565045358303), 'R99': 11, 'total_iter_99': 66}
+{'scenario': 'mild', 'iterations': 9, 'replicates': '0.478027343750;0.478515625000;0.479492187500', 'pooled_success': 0.4786783854166667, '95%CI': (0.4698539547336807, 0.4875161430050943), 'R99': 8, 'total_iter_99': 72}
+{'scenario': 'mild', 'iterations': 12, 'replicates': '0.522705078125;0.522705078125;0.524902343750', 'pooled_success': 0.5234375, '95%CI': (0.5146007565347493, 0.5322595940424751), 'R99': 7, 'total_iter_99': 84}
+{'scenario': 'strong', 'iterations': 3, 'replicates': '0.027832031250;0.027343750000;0.027587890625', 'pooled_success': 0.027587890625, '95%CI': (0.024836264651233373, 0.030634794026585883), 'R99': 165, 'total_iter_99': 495}
+{'scenario': 'strong', 'iterations': 6, 'replicates': '0.023681640625;0.023437500000;0.023437500000', 'pooled_success': 0.023518880208333332, '95%CI': (0.020984611201156845, 0.02635096994589427), 'R99': 194, 'total_iter_99': 1164}
+{'scenario': 'strong', 'iterations': 9, 'replicates': '0.019775390625;0.020507812500;0.020507812500', 'pooled_success': 0.020263671875, '95%CI': (0.017918208721436003, 0.0229089904010006), 'R99': 225, 'total_iter_99': 2025}
+
+[36/36] START strong j=12 seed=303
+{'scenario': 'strong', 'p1': 0.0001, 'p2': 0.001, 'iterations': 12, 'requested_seed': 303, 'effective_seed': 303, 'correct': 57, 'shots': 4096, 'success': 0.013916015625, 'depth': 14811, 'elapsed_s': 468.53}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+{'scenario': 'ideal', 'iterations': 9, 'replicates': '0.855712890625;0.855957031250;0.864013671875', 'pooled_success': 0.8585611979166666, '95%CI': (0.8522877121706399, 0.8646105678406483), 'R99': 3, 'total_iter_99': 27}
+{'scenario': 'ideal', 'iterations': 12, 'replicates': '0.999755859375;1.000000000000;1.000000000000', 'pooled_success': 0.9999186197916666, '95%CI': (0.999539135179676, 0.999985634250497), 'R99': 1, 'total_iter_99': 12}
+{'scenario': 'mild', 'iterations': 3, 'replicates': '0.138671875000;0.139160156250;0.141357421875', 'pooled_success': 0.13972981770833334, '95%CI': (0.13371220663677594, 0.14597261278901322), 'R99': 31, 'total_iter_99': 93}
+{'scenario': 'mild', 'iterations': 6, 'replicates': '0.357421875000;0.359130859375;0.358154296875', 'pooled_success': 0.3582356770833333, '95%CI': (0.3498034582922077, 0.3667565045358303), 'R99': 11, 'total_iter_99': 66}
+{'scenario': 'mild', 'iterations': 9, 'replicates': '0.478027343750;0.478515625000;0.479492187500', 'pooled_success': 0.4786783854166667, '95%CI': (0.4698539547336807, 0.4875161430050943), 'R99': 8, 'total_iter_99': 72}
+{'scenario': 'mild', 'iterations': 12, 'replicates': '0.522705078125;0.522705078125;0.524902343750', 'pooled_success': 0.5234375, '95%CI': (0.5146007565347493, 0.5322595940424751), 'R99': 7, 'total_iter_99': 84}
+{'scenario': 'strong', 'iterations': 3, 'replicates': '0.027832031250;0.027343750000;0.027587890625', 'pooled_success': 0.027587890625, '95%CI': (0.024836264651233373, 0.030634794026585883), 'R99': 165, 'total_iter_99': 495}
+{'scenario': 'strong', 'iterations': 6, 'replicates': '0.023681640625;0.023437500000;0.023437500000', 'pooled_success': 0.023518880208333332, '95%CI': (0.020984611201156845, 0.02635096994589427), 'R99': 194, 'total_iter_99': 1164}
+{'scenario': 'strong', 'iterations': 9, 'replicates': '0.019775390625;0.020507812500;0.020507812500', 'pooled_success': 0.020263671875, '95%CI': (0.017918208721436003, 0.0229089904010006), 'R99': 225, 'total_iter_99': 2025}
+{'scenario': 'strong', 'iterations': 12, 'replicates': '0.014892578125;0.014160156250;0.013916015625', 'pooled_success': 0.014322916666666666, '95%CI': (0.012368724095708602, 0.01658067783180652), 'R99': 320, 'total_iter_99': 3840}
+
+=== FINAL CURRENT SUMMARY ===
+{'scenario': 'ideal', 'iterations': 3, 'replicates': '0.175292968750;0.181396484375;0.176757812500', 'pooled_success': 0.17781575520833334, '95%CI': (0.17115627655419766, 0.18467661255958126), 'R99': 24, 'total_iter_99': 72}
+{'scenario': 'ideal', 'iterations': 6, 'replicates': '0.522460937500;0.529052734375;0.531005859375', 'pooled_success': 0.5275065104166666, '95%CI': (0.5186721635045567, 0.5363236646034358), 'R99': 7, 'total_iter_99': 42}
+{'scenario': 'ideal', 'iterations': 9, 'replicates': '0.855712890625;0.855957031250;0.864013671875', 'pooled_success': 0.8585611979166666, '95%CI': (0.8522877121706399, 0.8646105678406483), 'R99': 3, 'total_iter_99': 27}
+{'scenario': 'ideal', 'iterations': 12, 'replicates': '0.999755859375;1.000000000000;1.000000000000', 'pooled_success': 0.9999186197916666, '95%CI': (0.999539135179676, 0.999985634250497), 'R99': 1, 'total_iter_99': 12}
+{'scenario': 'mild', 'iterations': 3, 'replicates': '0.138671875000;0.139160156250;0.141357421875', 'pooled_success': 0.13972981770833334, '95%CI': (0.13371220663677594, 0.14597261278901322), 'R99': 31, 'total_iter_99': 93}
+{'scenario': 'mild', 'iterations': 6, 'replicates': '0.357421875000;0.359130859375;0.358154296875', 'pooled_success': 0.3582356770833333, '95%CI': (0.3498034582922077, 0.3667565045358303), 'R99': 11, 'total_iter_99': 66}
+{'scenario': 'mild', 'iterations': 9, 'replicates': '0.478027343750;0.478515625000;0.479492187500', 'pooled_success': 0.4786783854166667, '95%CI': (0.4698539547336807, 0.4875161430050943), 'R99': 8, 'total_iter_99': 72}
+{'scenario': 'mild', 'iterations': 12, 'replicates': '0.522705078125;0.522705078125;0.524902343750', 'pooled_success': 0.5234375, '95%CI': (0.5146007565347493, 0.5322595940424751), 'R99': 7, 'total_iter_99': 84}
+{'scenario': 'strong', 'iterations': 3, 'replicates': '0.027832031250;0.027343750000;0.027587890625', 'pooled_success': 0.027587890625, '95%CI': (0.024836264651233373, 0.030634794026585883), 'R99': 165, 'total_iter_99': 495}
+{'scenario': 'strong', 'iterations': 6, 'replicates': '0.023681640625;0.023437500000;0.023437500000', 'pooled_success': 0.023518880208333332, '95%CI': (0.020984611201156845, 0.02635096994589427), 'R99': 194, 'total_iter_99': 1164}
+{'scenario': 'strong', 'iterations': 9, 'replicates': '0.019775390625;0.020507812500;0.020507812500', 'pooled_success': 0.020263671875, '95%CI': (0.017918208721436003, 0.0229089904010006), 'R99': 225, 'total_iter_99': 2025}
+{'scenario': 'strong', 'iterations': 12, 'replicates': '0.014892578125;0.014160156250;0.013916015625', 'pooled_success': 0.014322916666666666, '95%CI': (0.012368724095708602, 0.01658067783180652), 'R99': 320, 'total_iter_99': 3840}
+
+DONE.
+Created:
+  QISKIT_NOISE_FINAL_RAW.csv
+  QISKIT_NOISE_FINAL_SUMMARY.csv
+  QISKIT_NOISE_FINAL_METADATA.txt

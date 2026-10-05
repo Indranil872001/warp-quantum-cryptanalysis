@@ -31,8 +31,8 @@ These files should remain in the repository and in the frozen journal release.
 - [x] Add the independent WARP numerical audit.
 - [x] Add the S-box optimality certificate.
 - [x] Add the final Toy-WARP-8 execution scripts, raw replicated CSV, summary, metadata, and execution log.
-- [ ] Run `./run_all.sh` in the final environment.
-- [ ] Freeze exact Python/package versions: `python -m pip freeze > environment-lock.txt`.
+- [x] Run the clean-environment reproducibility smoke workflow successfully on GitHub Actions.
+- [x] Freeze the resolved clean-environment package set in `environment-lock.txt`.
 - [ ] Select a software license with all coauthors.
 - [ ] Tag the submission state, e.g. `v1.0-npj-submission`.
 - [ ] Archive the tag on Zenodo/OSF or an equivalent persistent repository.

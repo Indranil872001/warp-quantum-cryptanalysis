@@ -52,6 +52,17 @@ python saes_reference.py
 python cross_cipher_collision_audit.py
 ```
 
+For Toy-WARP-8:
+
+```bash
+python experiments/toywarp8_reference.py
+python experiments/toywarp8_qiskit_end_to_end.py
+python experiments/toywarp8_noise_final.py
+```
+
+The final recorded replicated-noise log, summary, and metadata are under
+`data/toywarp8/`.
+
 For the independent WARP audit:
 
 ```bash

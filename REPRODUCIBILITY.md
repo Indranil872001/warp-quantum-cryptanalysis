@@ -30,7 +30,7 @@ These files should remain in the repository and in the frozen journal release.
 - [x] Add cross-cipher Mini-AES/S-AES validation code and outputs.
 - [x] Add the independent WARP numerical audit.
 - [x] Add the S-box optimality certificate.
-- [ ] Add/freeze the final Toy-WARP-8 execution scripts and original raw simulator outputs if not already present.
+- [x] Add the final Toy-WARP-8 execution scripts, raw replicated CSV, summary, metadata, and execution log.
 - [ ] Run `./run_all.sh` in the final environment.
 - [ ] Freeze exact Python/package versions: `python -m pip freeze > environment-lock.txt`.
 - [ ] Select a software license with all coauthors.

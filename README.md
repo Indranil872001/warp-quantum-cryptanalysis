@@ -103,3 +103,7 @@ See `CITATION.cff`.
 ## License
 
 A repository license should be selected with all coauthors before the archival release.
+
+## Clean-environment CI
+
+The repository includes `.github/workflows/reproducibility-smoke.yml`, which installs the submission dependencies on a fresh Ubuntu/Python 3.11 runner, records the resolved environment with `pip freeze`, and executes the WARP-core audit, Toy-WARP-8 classical check, S-AES reference test, S-box optimality certificate, and an end-to-end Toy-WARP-8 Qiskit smoke test.

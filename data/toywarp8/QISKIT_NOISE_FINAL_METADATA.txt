@@ -1,0 +1,25 @@
+Toy-WARP-8 FINAL Qiskit/Aer replicated noise campaign
+
+shots_per_seed = 4096
+simulator_seeds = [101, 202, 303]
+fixed_transpiler_seed = 777
+iterations = [3, 6, 9, 12]
+scenarios = [('ideal', 0.0, 0.0), ('mild', 1e-05, 0.0001), ('strong', 0.0001, 0.001)]
+true_key_bits = 11000110
+basis_gates = ['rz', 'sx', 'x', 'cx']
+optimization_level = 1
+
+Methodological control:
+- Build and transpile each j-iteration circuit exactly once.
+- Reuse the identical transpiled circuit for every scenario and replicate.
+- Change only seed_simulator between stochastic replicates.
+- Use simulator seeds 101, 202, 303.
+
+Noise model:
+- RZ virtual/noiseless.
+- X/SX -> depolarizing_error(p1, 1).
+- CX -> depolarizing_error(p2, 2).
+
+Each completed point pools 3 x 4096 = 12288 shots.
+The accompanying summary reports pooled success, 95% Wilson intervals,
+and the 99%-overall-success restart cost.

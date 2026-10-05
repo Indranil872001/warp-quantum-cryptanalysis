@@ -1,84 +1,94 @@
-# Quantum Cryptanalysis of WARP-128 with Known Plaintext
+# Quantum Key Search on WARP-128
 
-Reproducibility code for a quantum-resource and Grover key-search study of
-the 128-bit lightweight block cipher WARP.
+Reproducibility repository for the manuscript
+
+**Quantum Key Search on WARP-128: Verified Reversible Circuits, Multi-Pair Identifiability, and Success-Normalized Grover Analysis**
+
+Authors: **Indranil Mukherjee** and **Bimal Mandal**, Indian Institute of Technology Jodhpur.
 
 ## What is implemented
 
+### WARP-128 core
 - independent classical WARP-128 reference implementation;
-- verified reversible 41-round WARP circuit generator;
-- 10-gate WARP/MIDORI `Sb0` reversible implementation;
-- clean Feistel `S(x)`-XOR construction;
-- one-pair and two-pair Grover phase-oracle constructions;
-- balanced-tree and coherent-key-fanout depth-oriented oracle variants;
-- two exact Clifford+T Toffoli depth models (T-depth 3 and T-depth 1);
-- executable restricted-key-space experiments using the full 41-round WARP
-  predicate;
-- exact finite-shot Grover calculations;
-- an exact sparse-support theorem and full-WARP support-preservation test;
-- explicitly parameterized logical Pauli-noise experiments;
-- optional local Qiskit/Aer verification of small components.
+- verified reversible complete 41-round WARP circuit generator;
+- 10-gate WARP/MIDORI `Sb0` in-place reversible implementation;
+- clean Feistel `S(x)`-XOR compute-copy-uncompute primitive;
+- one-pair and multiple two-pair Grover phase-oracle constructions;
+- balanced equality-tree and coherent-key-fanout depth-oriented oracle variants;
+- two exact Clifford+T Toffoli depth models;
+- executable restricted-key experiments preserving the complete 41-round WARP predicate;
+- exact sparse-support verification;
+- finite-shot and logical-noise experiments.
 
-## Important scope statement
+### Cross-cipher extension/validation
+The manuscript also uses Mini-AES and S-AES as **small-domain validation experiments**, not as co-equal target ciphers.  The validation code exhaustively enumerates all 2^16 keys, checks one-pair multiplicity and two-pair uniqueness, and compares complete key-to-ciphertext occupancy spectra with the stated random-mapping baseline.
 
-The full WARP Grover oracle is a logical resource-estimation target.  The
-repository does **not** claim that the full 381--766 qubit Grover circuit is
-executable on current NISQ hardware.
+### Independent audit material
+The repository includes independent numerical checks for the WARP resource chain and a bidirectional meet-in-the-middle certificate for the 10-gate S-box optimum in the declared four-qubit NCT model.
 
-The executable experiments keep the complete 41-round WARP encryption
-function and restrict only the number of unknown master-key bits.
+## Scope
+
+The complete WARP Grover constructions are logical resource-estimation targets.  This repository does **not** claim that the full 381--766-qubit circuits are executable on present uncorrected NISQ hardware.
+
+The executable full-WARP experiments restrict only the number of unknown master-key bits while preserving the complete 41-round WARP function.  Toy-WARP-8 is a separate reduced demonstrator used only for literal end-to-end Qiskit/Aer experiments and noise-sensitivity studies.
 
 ## Quick start
 
 ```bash
 python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
+source .venv/bin/activate
 python -m pip install -r requirements.txt
 
-# Add src to the Python module search path
-export PYTHONPATH=$PWD/src       # Windows PowerShell: $env:PYTHONPATH="$PWD\src"
-
+export PYTHONPATH=$PWD/src
 python tests/verify_phase6.py
 python experiments/run_phase6.py
 ```
 
-## Local Qiskit/Aer
-
-IBM Quantum access is not required for local simulation.
+For the cross-cipher validation:
 
 ```bash
-python experiments/qiskit_local_components.py
+cd validation/cross_cipher
+python saes_reference.py
+python cross_cipher_collision_audit.py
 ```
 
-See `docs/QISKIT_LOCAL_SETUP.md`.
+For the independent WARP audit:
 
-## Directory structure
+```bash
+python validation/warp_core/independent_warp_numerical_audit.py
+```
+
+For the S-box optimality certificate:
+
+```bash
+g++ -O3 -std=c++17 validation/sbox_optimality/sbox_nct_mitm_certificate.cpp -o /tmp/sbox_cert
+/tmp/sbox_cert
+```
+
+## Repository layout
 
 ```text
-src/          core WARP and reversible/Grover constructions
-tests/        regression, balanced-comparator, and sparse-support tests
-experiments/  finite-shot, noise, and Qiskit scripts
-data/         generated reference outputs
-manuscript/   current LaTeX manuscript source
-docs/         setup and paper-alignment notes
+src/                         WARP core and reversible/Grover constructions
+tests/                       WARP regression and sparse-support tests
+experiments/                 finite-shot, logical-noise and executable experiments
+validation/cross_cipher/     Mini-AES / S-AES extension and occupancy audit
+validation/warp_core/        independent full-WARP numerical audit
+validation/sbox_optimality/  independent 4-qubit NCT optimality certificate
+data/                        generated reference outputs
+manuscript/                  current manuscript source
+docs/                        setup, scope, and paper-alignment notes
 ```
 
-## Reproducibility
+## Reproducibility and release policy
 
-The main regression suite checks:
+The mutable `main` branch is a development mirror.  Before journal submission, the exact submission state should be tagged (for example `v1.0-npj-submission`) and archived on Zenodo or an equivalent persistent repository.  The DOI/immutable URL should then be inserted in the manuscript Code Availability statement.
 
-- official WARP test vectors;
-- reversible circuit correctness;
-- exact sparse gate-level known-plaintext predicate;
-- one- and two-pair restricted-key Grover recovery;
-- exact finite-shot calculations.
+See `REPRODUCIBILITY.md` for the final release checklist.
 
 ## Citation
 
-A `CITATION.cff` file should be finalized with the complete author list and
-paper title before public release.
+See `CITATION.cff`.
 
 ## License
 
-Choose the repository license together with all coauthors before public
-release.  No license is asserted by this preparation package.
+A repository license should be selected with all coauthors before the archival release.

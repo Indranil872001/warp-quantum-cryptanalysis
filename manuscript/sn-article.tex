@@ -485,7 +485,7 @@ Consequently, when $M>1$, a one-pair oracle solves ``find a key consistent with 
 \label{subsec:cross_cipher_validation}
 The ideal-permutation law above is cipher-agnostic.  To check that the single-pair phenomenon motivating the WARP oracle is not peculiar to one construction, we independently implemented Mini-AES and S-AES and exhaustively evaluated all $2^{16}$ candidate keys for selected known pairs.  Table~\ref{tab:cross_cipher_validation} reports the exact satisfying sets.
 
-\begin{table}[H]
+\begin{table}[htbp]
 \centering
 \caption{Exhaustive $2^{16}$-key validation of one-pair multiplicity and two-pair uniqueness in two independent 16-bit SPNs.}
 \label{tab:cross_cipher_validation}
@@ -764,16 +764,17 @@ phase/.style={draw, minimum width=0.82cm, minimum height=0.52cm, fill=red!6}]
 \caption{Fault-tolerant depth models for WARP encryption and the principal two-pair Grover iterations. FT-A uses a seven-$T$, $T$-depth-three exact Toffoli without decomposition ancillas; FT-B uses the seven-$T$, $T$-depth-one, four-ancilla Toffoli. The FT-B width is a conservative upper bound based on the peak number of parallel CCX gates.}
 \label{tab:ft_depth_models}
 \scriptsize
-\begin{tabular}{lrrrrrr}
+{\setlength{\tabcolsep}{2.2pt}
+\begin{tabular}{@{}lrrrrrr@{}}
 \toprule
-Construction & Logical Q & $T$ count & $D_{\rm CCX}$ & $T$-depth A & $T$-depth B & FT-B Q upper\\
+Construction & Q & $T$ & $D_{\rm CCX}$ & $D_T$ A & $D_T$ B & FT-B Q\\
 \midrule
 WARP encryption & 256 & 36,736 & 168 & 504 & 168 & 384\\
-Two-pair ladder iteration & 637 & 152,250 & 1,156 & 3,468 & 1,156 & 829\\
-Two-pair balanced iteration & 638 & 152,264 & 678 & 2,034 & 678 & 1,150\\
-Two-pair parallel+balanced & 766 & 152,264 & 358 & 1,074 & 358 & 1,278\\
+Two-pair ladder & 637 & 152,250 & 1,156 & 3,468 & 1,156 & 829\\
+Two-pair balanced & 638 & 152,264 & 678 & 2,034 & 678 & 1,150\\
+Parallel+balanced & 766 & 152,264 & 358 & 1,074 & 358 & 1,278\\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table}
 
 These numbers reinforce the width--depth lesson observed in prior Grover-oracle and lightweight-cipher resource studies~\cite{Jaques2020,Rahman2022}: a nearly unchanged non-Clifford gate count can hide a large design space in logical width and $T$-depth.
@@ -917,7 +918,7 @@ shots. The depths of the fixed compiled circuits for $j=3,6,9,12$ were 3,687, 7,
 
 Figure~\ref{fig:toywarp_qiskit_noise} reports the pooled correct-key probabilities with 95\% Wilson intervals. The pooled simulator estimates in the zero-noise scenario for $j=3,6,9,12$ are 0.177816, 0.527507, 0.858561, and 0.999919, respectively, and agree closely with the exact Grover probabilities 0.179721, 0.527618, 0.860676, and 0.999947. Under mild noise $(p_1,p_2)=(10^{-5},10^{-4})$, the corresponding pooled probabilities are 0.139730, 0.358236, 0.478678, and 0.523438. Under the stronger setting $(10^{-4},10^{-3})$, they fall to 0.027588, 0.023519, 0.020264, and 0.014323. Thus increasing circuit length continues to improve success in the mild regime up to the tested $j=12$ point, but under stronger noise the accumulated error dominates and the success probability decreases as more Grover iterations are applied.
 
-\begin{figure}[H]
+\begin{figure}[htbp]
 \centering
 \IfFileExists{toywarp8_qiskit_noise_final.pdf}{%
 \includegraphics[width=0.86\textwidth]{toywarp8_qiskit_noise_final.pdf}%
@@ -930,7 +931,7 @@ Figure~\ref{fig:toywarp_qiskit_noise} reports the pooled correct-key probabiliti
 
 As in Eq.~\eqref{eq:fixed_success_cost}, a smaller per-run iteration count does not by itself imply smaller attack cost. Using each pooled probability as a plug-in estimate and targeting 99\% overall success, Table~\ref{tab:toywarp_fixed_success} gives the best tested point for each noise regime. In the ideal case the standard $j=12$ point remains optimal. Under mild noise, the pooled plug-in estimates favor $j=6$, with $R_{99}=11$ and total iteration cost 66. The $j=9$ point is close: its pooled probability 0.478678 gives $R_{99}=8$ and total cost 72, while its 95\% Wilson interval crosses the discrete $R_{99}=7/8$ boundary. We therefore treat the mild-noise $j=6$ versus $j=9$ ordering as a measured plug-in comparison rather than a sharp universal optimum. Under the stronger noise model, $j=3$ is clearly the best of the tested points, although the required repetition count is already large.
 
-\begin{table}[H]
+\begin{table}[htbp]
 \centering
 \caption{Final replicated Toy-WARP-8 Qiskit/Aer experiment: best tested point under the 99\% fixed-success plug-in metric. Confidence intervals are 95\% Wilson intervals from 12,288 pooled shots.}
 \label{tab:toywarp_fixed_success}
@@ -961,7 +962,7 @@ Thus
 
 For a detection threshold $T=100$, Table~\ref{tab:finite} shows that $j=2$ has expected count only 96.91 and probability about 0.386 of actually reaching 100 counts, whereas $j=3$ already gives expected count 184.03 and essentially unit probability of exceeding the threshold.
 
-\begin{table}[H]
+\begin{table}[htbp]
 \centering
 \caption{Finite-shot behavior for the $u=8$, $M=1$, $S=1024$ experiment.}
 \label{tab:finite}
@@ -1068,7 +1069,7 @@ This quantity is \emph{not} the Grover success probability and should not be int
 
 Table~\ref{tab:related_comparison} positions the present work relative to representative quantum block-cipher studies. Resource conventions differ substantially across the literature, so the table reports each work's own principal implementation landmark rather than treating unlike gate libraries as directly comparable.
 
-\begin{table}[H]
+\begin{table}[htbp]
 \centering
 \caption{Representative quantum-cipher studies and their resource-analysis emphasis. Numerical landmarks follow each cited work's own cost convention and are therefore not direct cross-paper benchmarks.}
 \label{tab:related_comparison}

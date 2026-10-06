@@ -1,0 +1,29 @@
+name: overleaf-source-package
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Overleaf source folder
+        run: |
+          mkdir -p overleaf-source
+          cp manuscript/sn-article.tex overleaf-source/sn-article.tex
+          cp manuscript/sn-jnl.cls overleaf-source/sn-jnl.cls
+          cat > overleaf-source/README_OVERLEAF.txt <<'EOF'
+          Upload ALL files in this folder to the same Overleaf project root.
+          Set Main document = sn-article.tex.
+          Set Compiler = pdfLaTeX.
+          The manuscript uses an embedded thebibliography, so no .bib/.bst file is required.
+          Add toywarp8_qiskit_noise_final.pdf to the same project root for the final plotted figure.
+          EOF
+          cd overleaf-source && zip -r ../WARP_NPJ_OVERLEAF_SOURCE.zip .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: WARP-NPJ-Overleaf-source
+          path: WARP_NPJ_OVERLEAF_SOURCE.zip

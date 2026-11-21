@@ -1,0 +1,290 @@
+{
+  "title": "WARP-128 Physica Scripta reviewer audit — immutable research snapshot",
+  "source_repository": "https://github.com/Indranil872001/warp-quantum-cryptanalysis",
+  "source_commit": "0efcc44c4f073acd6c15c8fb8ef98c922187a2b3",
+  "source_tree_sha": "0efcc44c4f073acd6c15c8fb8ef98c922187a2b3",
+  "generated_from": "GitHub commit tree, 2026-11-21",
+  "purpose": "Verify that every original tracked research source and data file is present and byte-for-byte unchanged. Reviewer additions on this branch are intentionally excluded.",
+  "files": [
+    {
+      "path": ".github/workflows/reproducibility-smoke.yml",
+      "size": 2049,
+      "git_blob_sha1": "762feafc56d6ce74d549e51f78601a7a287bd72f"
+    },
+    {
+      "path": ".gitignore",
+      "size": 73,
+      "git_blob_sha1": "bd67e446dda6e796d9274e1a1dbe3e4ff0c011d2"
+    },
+    {
+      "path": "CITATION.cff",
+      "size": 696,
+      "git_blob_sha1": "9c83e4a83d199a04d4bf2828b7fd899e03007450"
+    },
+    {
+      "path": "README.md",
+      "size": 4543,
+      "git_blob_sha1": "112d5c4a23819dba77e2301c21f0f751a6b1f0d9"
+    },
+    {
+      "path": "REPRODUCIBILITY.md",
+      "size": 2180,
+      "git_blob_sha1": "fa9e884be948d2f9a6066b1047eed5a7c3d36d2f"
+    },
+    {
+      "path": "data/COMPONENT_NOISE.csv",
+      "size": 1679,
+      "git_blob_sha1": "1ec21f3d02645f837117afffdca7dd529b42435a"
+    },
+    {
+      "path": "data/FINITE_SHOT_1024.csv",
+      "size": 1434,
+      "git_blob_sha1": "44bb25a5d074ff567d81efc4fd1736f4753fd2d6"
+    },
+    {
+      "path": "data/GATELEVEL_GROVER_DEMO.json",
+      "size": 626,
+      "git_blob_sha1": "f289b6e25b45afb8914913a5e50a300e73651f1d"
+    },
+    {
+      "path": "data/RESOURCE_MODELS_V2.csv",
+      "size": 526,
+      "git_blob_sha1": "a3741e3533c69769c177f97ca361ceae88aa14d5"
+    },
+    {
+      "path": "data/RESOURCE_MODELS_V2.txt",
+      "size": 1354,
+      "git_blob_sha1": "17070ab01b10198dbc48a0ea360fa08e34b07078"
+    },
+    {
+      "path": "data/RESULTS.txt",
+      "size": 7665,
+      "git_blob_sha1": "8624917c01fbe75cd6e8f8a7de014063f59412aa"
+    },
+    {
+      "path": "data/SPARSE_SUPPORT_TEST.txt",
+      "size": 66,
+      "git_blob_sha1": "20a0a518af293754744ba0fcdeef53ab3ca94651"
+    },
+    {
+      "path": "data/toywarp8/QISKIT_NOISE_FINAL_METADATA.txt",
+      "size": 871,
+      "git_blob_sha1": "8da9d61cf602ef1636239a54460ce4b1c68b504b"
+    },
+    {
+      "path": "data/toywarp8/QISKIT_NOISE_FINAL_RAW.csv",
+      "size": 2330,
+      "git_blob_sha1": "5896eda7a95f86cb9848b194d9f90ada0cd37474"
+    },
+    {
+      "path": "data/toywarp8/QISKIT_NOISE_FINAL_SUMMARY.csv",
+      "size": 1717,
+      "git_blob_sha1": "7cef7dccce16568983db5310920d85182efaf01a"
+    },
+    {
+      "path": "data/toywarp8/qiskit_noise_final.log",
+      "size": 59343,
+      "git_blob_sha1": "2e2565ce54652fe270e3a676c24f2fd7b9516604"
+    },
+    {
+      "path": "docs/LITERATURE_POSITIONING_2026.md",
+      "size": 3137,
+      "git_blob_sha1": "9be14ec2a1ca62e14c422a6cc9bccaf5aaa8d5ef"
+    },
+    {
+      "path": "docs/PAPER_ALIGNMENT.md",
+      "size": 2710,
+      "git_blob_sha1": "1072d9415684c56ac3a5e7340d28d89e57a03b4f"
+    },
+    {
+      "path": "docs/QISKIT_LOCAL_SETUP.md",
+      "size": 1468,
+      "git_blob_sha1": "456f7a0ad3357ae629f29f05900efe77eb53e6f5"
+    },
+    {
+      "path": "docs/SPARSE_SIMULATOR_THEOREM.md",
+      "size": 2014,
+      "git_blob_sha1": "48882fe7dfe4d12098d2872b72d73dfe38a03558"
+    },
+    {
+      "path": "environment-lock.txt",
+      "size": 472,
+      "git_blob_sha1": "02550740d7c163fc669e5a98c4451a63d3133148"
+    },
+    {
+      "path": "experiments/component_noise.py",
+      "size": 4543,
+      "git_blob_sha1": "d0fc795ba58e142190e37b7922c89f7ef9ef7d1a"
+    },
+    {
+      "path": "experiments/early_stop_tradeoff.py",
+      "size": 1746,
+      "git_blob_sha1": "fe16e75ed2bf2dad1a103da520b2fdcb9a6c19c2"
+    },
+    {
+      "path": "experiments/finite_shot_analysis.py",
+      "size": 1558,
+      "git_blob_sha1": "986922b4e135692b0a8a3e2d905070a418ac2d0a"
+    },
+    {
+      "path": "experiments/optional_ibm_hardware.py",
+      "size": 774,
+      "git_blob_sha1": "1cc911abe225369c2ef4908b48002cd1da0fb4da"
+    },
+    {
+      "path": "experiments/plot_toywarp8_noise.py",
+      "size": 1386,
+      "git_blob_sha1": "187c24bff4c0d872395952d9b4a2acb0cb5d23f9"
+    },
+    {
+      "path": "experiments/qiskit_local_components.py",
+      "size": 1860,
+      "git_blob_sha1": "b54ec9dc7168bebd84a3649998b3588512d55188"
+    },
+    {
+      "path": "experiments/resource_models_v2.py",
+      "size": 3182,
+      "git_blob_sha1": "126d2c817b54e5f2f1f70c2d28e5f004cc62a16b"
+    },
+    {
+      "path": "experiments/run_phase6.py",
+      "size": 1070,
+      "git_blob_sha1": "38ae48ce78b2f780e724e099316eb42789e71e82"
+    },
+    {
+      "path": "experiments/toywarp8_noise_final.py",
+      "size": 4107,
+      "git_blob_sha1": "f98055bfca781f9ed71427073068b77c2d41d6d5"
+    },
+    {
+      "path": "experiments/toywarp8_qiskit_end_to_end.py",
+      "size": 3604,
+      "git_blob_sha1": "94b0e301d186ad40864b95777726a10a905cfad1"
+    },
+    {
+      "path": "experiments/toywarp8_reference.py",
+      "size": 1415,
+      "git_blob_sha1": "c5bf2bcb08df90583a1f6d6ac09ba1d0e5fa6c5b"
+    },
+    {
+      "path": "manuscript/WARP_quantum_manuscript.tex",
+      "size": 101295,
+      "git_blob_sha1": "43ac4df25fc074ee8858ee3d46f233ad6d307abb"
+    },
+    {
+      "path": "requirements-submission.txt",
+      "size": 176,
+      "git_blob_sha1": "66599d881ddc18156ed7574e0a62fd265a45a2f0"
+    },
+    {
+      "path": "requirements.txt",
+      "size": 56,
+      "git_blob_sha1": "aba0305f0fd0dff4c62fc780616f91e499d3a3fa"
+    },
+    {
+      "path": "run_all.sh",
+      "size": 277,
+      "git_blob_sha1": "9874a5c07c3588809054d94e44c11be4c4dadaf4"
+    },
+    {
+      "path": "src/depth_optimized_oracle.py",
+      "size": 5926,
+      "git_blob_sha1": "284c9a576c11de575cac4c0ffa02ec2de15941e0"
+    },
+    {
+      "path": "src/grover_oracle.py",
+      "size": 9957,
+      "git_blob_sha1": "94b8ed32ac1ab20f2a0096f1b8732c50cea430f9"
+    },
+    {
+      "path": "src/midori_sbox.py",
+      "size": 5752,
+      "git_blob_sha1": "db58e11161e18988c196e35a1a5089c9124b0f79"
+    },
+    {
+      "path": "src/noise_utils.py",
+      "size": 1806,
+      "git_blob_sha1": "6763fa2bb2026627f79123493fee3950d5d779f8"
+    },
+    {
+      "path": "src/partial_key_grover.py",
+      "size": 4570,
+      "git_blob_sha1": "cb3c88c03f0b4b9d470746321e3bab71d4ed4346"
+    },
+    {
+      "path": "src/sparse_gatelevel_grover.py",
+      "size": 3031,
+      "git_blob_sha1": "0a692bd4cd87ec590acb61aa62e807edba27a3a0"
+    },
+    {
+      "path": "src/warp.py",
+      "size": 4297,
+      "git_blob_sha1": "b7b36668cf03fbb36f6713c7f136db1c31fc0750"
+    },
+    {
+      "path": "src/warp_quantum_round.py",
+      "size": 6210,
+      "git_blob_sha1": "2ecd1b41ead2bdd94d02a6edea1c257f2956766f"
+    },
+    {
+      "path": "tests/verify_depth_optimized.py",
+      "size": 1120,
+      "git_blob_sha1": "777eee00acc4b7dc68c2fdc714f3e0885d4749b0"
+    },
+    {
+      "path": "tests/verify_phase6.py",
+      "size": 1415,
+      "git_blob_sha1": "1a1324aec6d499f9a26dd8e29e3b519d92da5d61"
+    },
+    {
+      "path": "tests/verify_sparse_support.py",
+      "size": 976,
+      "git_blob_sha1": "fee4fdf6d4167f5ae7f3bfbd36c7333487af9149"
+    },
+    {
+      "path": "validation/cross_cipher/README.md",
+      "size": 874,
+      "git_blob_sha1": "c1e4336518fe117a647f8a4aad050d7f2b1d876a"
+    },
+    {
+      "path": "validation/cross_cipher/cross_cipher_collision_audit.py",
+      "size": 5209,
+      "git_blob_sha1": "c1b5cfe356265663c6347b30d4a73daeac992717"
+    },
+    {
+      "path": "validation/cross_cipher/cross_cipher_occupancy.csv",
+      "size": 2866,
+      "git_blob_sha1": "0d1dc340ec41c1db315c084f79c732f802f39ed2"
+    },
+    {
+      "path": "validation/cross_cipher/saes_reference.py",
+      "size": 1499,
+      "git_blob_sha1": "4c8acebbd601312d5730cdcf36e5acb4e9e4613d"
+    },
+    {
+      "path": "validation/cross_cipher/two_pair_uniqueness.csv",
+      "size": 224,
+      "git_blob_sha1": "4bdde7de9ea32de8fdd45ea89d6eeec83330fa7d"
+    },
+    {
+      "path": "validation/sbox_optimality/SBOX_MITM_CERTIFICATE.txt",
+      "size": 332,
+      "git_blob_sha1": "2175f77fa17307d39642fd0ffe3907dcd3775dc5"
+    },
+    {
+      "path": "validation/sbox_optimality/sbox_nct_mitm_certificate.cpp",
+      "size": 2097,
+      "git_blob_sha1": "eb107ef3c34fdd30b9b004474cf66e5aec3e9777"
+    },
+    {
+      "path": "validation/warp_core/INDEPENDENT_AUDIT_OUTPUT.txt",
+      "size": 1588,
+      "git_blob_sha1": "8484a66f726dc2117bf08b90bef38af94ea17825"
+    },
+    {
+      "path": "validation/warp_core/independent_warp_numerical_audit.py",
+      "size": 4970,
+      "git_blob_sha1": "14f719f0ac0ac3d688da1268148b78244a8d647a"
+    }
+  ]
+}

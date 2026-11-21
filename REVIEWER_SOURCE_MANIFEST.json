@@ -2,7 +2,7 @@
   "title": "WARP-128 Physica Scripta reviewer audit — immutable research snapshot",
   "source_repository": "https://github.com/Indranil872001/warp-quantum-cryptanalysis",
   "source_commit": "0efcc44c4f073acd6c15c8fb8ef98c922187a2b3",
-  "source_tree_sha": "0efcc44c4f073acd6c15c8fb8ef98c922187a2b3",
+  "source_tree_sha": "6349c726af50244ac71b1d71e3c4123fa5243738",
   "generated_from": "GitHub commit tree, 2026-11-21",
   "purpose": "Verify that every original tracked research source and data file is present and byte-for-byte unchanged. Reviewer additions on this branch are intentionally excluded.",
   "files": [

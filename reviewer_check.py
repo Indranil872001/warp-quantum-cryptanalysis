@@ -149,7 +149,7 @@ def run_experiment_suite(level):
                 ('early_stop', [sys.executable, 'experiments/early_stop_tradeoff.py']),
             ])
         if level == 'noise':
-            tasks.append(('replicated_qiskit_noise', [sys.executable, 'experiments/toywarp8_noise_final.py']))
+            tasks.append(('replicated_qiskit_noise', [sys.executable, 'experiments/toywarp8_noise_archival_schema.py']))
         summary = []
         for name, argv in tasks:
             print('RUN:', name, flush=True)

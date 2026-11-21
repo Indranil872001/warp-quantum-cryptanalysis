@@ -71,7 +71,8 @@ def check_noise_csv():
     for summary in summaries:
         key = (summary['scenario'], int(summary['iterations']))
         rows = groups[key]
-        assert sorted(int(x['seed']) for x in rows) == [101, 202, 303], key
+        assert sorted(int(x.get('seed', x.get('requested_seed'))) for x in rows) == [101, 202, 303], key
+        assert all('effective_seed' not in x or x['effective_seed'] == x['requested_seed'] for x in rows), key
         assert all(int(x['shots']) == 4096 for x in rows), key
         n = sum(int(x['shots']) for x in rows)
         correct = sum(int(x['correct']) for x in rows)

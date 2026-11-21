@@ -98,3 +98,11 @@ The runner above is preferred, because it produces separate logs without overwri
 * To make the record citable long term, publish this exact snapshot via a tagged release and Zenodo DOI (or an equivalent permanent archive) before the final journal submission.
 
 For an unchanging reviewer link, prefer the **commit-specific archive URL** supplied in the final submission's Code Availability paragraph rather than the branch-name URL above.
+
+## 6. Historical raw-CSV provenance note (important)
+
+The frozen `data/toywarp8/QISKIT_NOISE_FINAL_RAW.csv` records `requested_seed`, `effective_seed`, and `elapsed_s` fields. The frozen `experiments/toywarp8_noise_final.py` has an earlier/simpler output schema with a single `seed` field and without elapsed time. **These two files are not byte-for-byte reproducible from one another as formatted CSVs.** The original exact raw-export version was not found in the pinned tracked sources.
+
+To address this transparently, `experiments/toywarp8_noise_archival_schema.py` is an **added reviewer-compatible adaptation** of the frozen generator, with the archived field names. It is not presented as the original provenance of historical timings. The `--noise` runner uses this adaptation. Runtimes (`elapsed_s`) are hardware-dependent and are not expected to agree across computers. The independent `--verify` check establishes that **all 36 archived observations recompute all 12 published summary lines exactly**, including seeded replicates, pooled proportions, Wilson intervals, logical depth and 99% restart costs. This numerical consistency is not a substitute for independently rerunning the stochastic simulations.
+
+The archived independent WARP audit transcript also contains an unrelated Python startup diagnostic from an external spreadsheet runtime after the WARP PASS statements; this is not a WARP test assertion, and its presence is retained in the unchanged historical evidence. The reviewer runner logs fresh output separately.
